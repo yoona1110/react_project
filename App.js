@@ -1,109 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
-import { Alert, Button, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { default as LoginPage } from /Users/heoyoona/Desktop/PROJECT/react_native_app/login.js;
+import { default as SignInPage} from /Users/heoyoona/Desktop/PROJECT/react_native_app/signIn.js;
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+function App() {
+  
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}> 니캉내캉 </Text>
-
-      <View style={styles.idInputTheme}>
-        <Text style={styles.inputTitle}> 아이디 </Text>
-        <TextInput style={styles.idInput}/> 
-      </View>
-      
-      <View style={styles.pwInputTheme}>
-        <Text style={styles.inputTitle}> 비밀번호 </Text>
-        <TextInput style={styles.pwInput} secureTextEntry='true'/> 
-      </View>
-
-      {/* 특정 영역을 지정*/}
-      <TouchableOpacity style={styles.btn_SignUp}>
-        <Text style={styles.btnFont}> 회원가입 </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.btn_Login}>
-        <Text style={styles.btnFont}> 로그인 </Text>
-      </TouchableOpacity>
-
-
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContatiner>
+      <Stack.Navigator initialRouteName="LoginPage">
+        <Stack.Screen name='LoginPage' component={LoginPage}/>
+        <Stack.Screen name='SignInPage' component={SignInPage}/>
+      </Stack.Navigator>
+    </NavigationContatiner>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FFEDAB',
-    alignItems: 'center'
-  },
-
-  title: {
-    fontSize: 50,
-    fontWeight: 'bold',
-    color: '#575757',
-    marginTop: 220
-  },
-
-  inputTitle: {
-    fontSize: 26,
-    fontWeight: 'bold',
-    marginTop: 12
-  },
-
-  idInputTheme: {
-    flexDirection: 'row',
-    marginTop: 58,
-    marginLeft: 9
-  },
-
-  pwInputTheme: {
-    flexDirection: 'row',
-    marginTop: 15
-  },
-
-  idInput: {
-    width: 220,
-    height: 50,
-    fontSize: 18,
-    padding: 10,
-    borderRadius: 10,
-    marginLeft: 25,
-    backgroundColor: '#FAFAFA'
-  },
-
-  pwInput: {
-    width: 220,
-    height: 50,
-    fontSize: 18,
-    padding: 10,
-    borderRadius: 10,
-    marginLeft: 15,
-    backgroundColor: '#FAFAFA'
-  },
-
-  btn_SignUp: {
-    width: 320,
-    height: 60,
-    backgroundColor: '#FFE589',
-    paddingTop: 15,
-    marginTop: 50,
-    borderRadius: 10
-  },
-
-  btnFont: {
-    textAlign: 'center',
-    fontSize: 30,
-    fontWeight: 'bold',
-    color: '#575757'
-  },
-
-  btn_Login: {
-    width: 320,
-    height: 60,
-    backgroundColor: '#FFE589',
-    paddingTop: 15,
-    marginTop: 15,
-    borderRadius: 10
-  }
-});
+export default App;
