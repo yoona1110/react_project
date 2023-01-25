@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Shadow, Dimensions, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Dimensions } from 'react-native';
+import * as Permissions from 'expo-permissions';
 
 const Login = ({ navigation }) => {
   return (
@@ -54,76 +54,83 @@ const SignIn = ({ navigation }) => {
     <View 
       style={[styles.container,
         {backgroundColor: '#FFFFFF'}]}>
+
       <View style={styles.signin_TitleTheme}>
         <Text style={styles.signin_Title}> 회원가입 </Text>
       </View>
 
-      <Image 
-          source={{uri: "/Users/heoyoona/Desktop/PROJECT/프젝/react native app/logo.png"}}
+      <View  
+        style={[styles.container, 
+            {flex: 6.5}]}>
+        <Image 
           style={styles.signin_Profile}/>
-          
-      <View style={styles.signin_Btn_ProfileTheme}>
-        <Text style={styles.signin_Btn_Profile}> 사진 변경 </Text>
+        <View style={styles.signin_Btn_ProfileTheme}>
+          <Text style={styles.signin_Btn_Profile}> 사진 변경 </Text>
+        </View>
+
+        <View>
+          <View 
+            style={[styles.login_InputTheme, 
+              {marginTop: 35,
+              marginLeft: 20}]}>
+            <Text style={styles.signin_InputFont}> 닉네임 </Text>
+            <TextInput style={[styles.login_Input, {marginLeft: 40}]}/>
+          </View>
+
+          <View 
+            style={[styles.login_InputTheme,
+              {marginLeft: 20}]}>
+            <Text style={styles.signin_InputFont}> 아이디 </Text>
+            <TextInput style={[styles.login_Input, {marginLeft: 40}]}/>
+          </View>
+
+          <View 
+            style={[styles.login_InputTheme, 
+              {marginLeft: 15}]}>
+            <Text style={styles.signin_InputFont}> 비밀번호 </Text>
+            <TextInput 
+              style={[styles.login_Input, 
+                {marginLeft: 30}]}
+              secureTextEntry='true'/>
+          </View>
+
+          <View 
+           style={[styles.login_InputTheme, 
+              {marginLeft: 0}]}>
+            <Text style={styles.signin_InputFont}> 비밀번호 확인 </Text>
+            <TextInput 
+              style={[styles.login_Input, 
+                {marginLeft: 10}]}
+              secureTextEntry='true'/>
+          </View>
+
+          <View 
+            style={[styles.login_InputTheme,
+              {marginLeft: 20}]}>
+            <Text style={styles.signin_InputFont}> 이메일 </Text>
+            <TextInput style={[styles.login_Input, {marginLeft: 40}]}/>
+          </View>
+
+          <View 
+            style={[styles.login_InputTheme,
+              {marginLeft: 20}]}>
+            <Text style={styles.signin_InputFont}> 주소지 </Text>
+            <TextInput style={[styles.login_Input, {marginLeft: 40}]}/>
+          </View>
+        </View>
       </View>
 
-      <View>
-        <View 
-          style={[styles.login_InputTheme, 
-            {marginTop: 35},
-            {marginLeft: 20}]}>
-          <Text style={styles.signin_InputFont}> 닉네임 </Text>
-          <TextInput style={[styles.login_Input, {marginLeft: 40}]}/>
-        </View>
+      <View  
+        style={styles.container}>
+        <TouchableOpacity 
+            style={[styles.login_Btn,
+              {marginTop: 20,
+              width: 350}]}
+            onPress={() => navigation.navigate('Login')}>
 
-        <View 
-          style={[styles.login_InputTheme,
-            {marginLeft: 20}]}>
-          <Text style={styles.signin_InputFont}> 아이디 </Text>
-          <TextInput style={[styles.login_Input, {marginLeft: 40}]}/>
+            <Text style={styles.login_Btn_Font}> 회원가입 </Text>
+          </TouchableOpacity>
         </View>
-
-        <View 
-          style={[styles.login_InputTheme, 
-            {marginLeft: 15}]}>
-          <Text style={styles.signin_InputFont}> 비밀번호 </Text>
-          <TextInput 
-            style={[styles.login_Input, 
-              {marginLeft: 30}]}
-            secureTextEntry='true'/>
-        </View>
-
-        <View 
-          style={[styles.login_InputTheme, 
-            {marginLeft: 0}]}>
-          <Text style={styles.signin_InputFont}> 비밀번호 확인 </Text>
-          <TextInput 
-            style={[styles.login_Input, 
-              {marginLeft: 10}]}
-            secureTextEntry='true'/>
-        </View>
-
-        <View 
-          style={[styles.login_InputTheme,
-            {marginLeft: 20}]}>
-          <Text style={styles.signin_InputFont}> 이메일 </Text>
-          <TextInput style={[styles.login_Input, {marginLeft: 40}]}/>
-        </View>
-
-        <View 
-          style={[styles.login_InputTheme,
-            {marginLeft: 20}]}>
-          <Text style={styles.signin_InputFont}> 주소지 </Text>
-          <TextInput style={[styles.login_Input, {marginLeft: 40}]}/>
-        </View>
-      </View>
-
-      <TouchableOpacity 
-          style={[styles.login_Btn,
-            {marginTop: 40},
-            {width: 350}]}
-          onPress={() => navigation.navigate('Login')}>
-          <Text style={styles.login_Btn_Font}> 회원가입 </Text>
-        </TouchableOpacity>
 
       <StatusBar style="auto" />
     </View>
@@ -132,8 +139,47 @@ const SignIn = ({ navigation }) => {
 
 const Main = ({ navigation }) => {
   return (
-    <View>
-      <Text> Main Page </Text>
+    <View
+      style={[styles.container,
+        {backgroundColor: '#FFFFFF'}]}>
+
+      <View 
+        style={[styles.signin_TitleTheme,
+          {alignItems: 'flex-start',
+          flexDirection: 'row',
+          flex: 1}]}>
+        <Text 
+          style={[styles.signin_Title,
+            {marginLeft: 20}]}> 후평동 </Text>
+
+        <Image source={
+          require('./assets/image/main_notification.png')}
+          style={styles.main_notificationImg}/>
+      </View>
+
+      <View 
+        style={[styles.main_Page, 
+        styles.container, 
+        {flex: 6.5}]}>
+
+      </View>
+
+      <View style={[styles.container, 
+        {backgroundColor: '#575757'},
+        Platform.select({
+          ios: {
+            shadowColor: '#000',
+            shadowOpacity: 5,
+            shadowOffset: {
+              width: 10,
+              height: 10},
+            shadowRadius: 2
+          },
+          android: {
+            elevation: 3
+          }})]}>
+      </View>
+
       <StatusBar style="auto" />
     </View>
   );
@@ -213,6 +259,7 @@ const styles = StyleSheet.create({
 
   /* 회원가입 페이지 */
   signin_TitleTheme: {
+    flex: 1,
     width: Dimensions.get('window').width,
     height: 100,
     backgroundColor: '#FFEDAB',
@@ -253,7 +300,27 @@ const styles = StyleSheet.create({
     fontSize: 22,
     color: '#575757',
     marginTop: 13
+  },
+
+  main_notificationImg: {
+    width: 30,
+    height: 30,
+    marginTop: 51,
+    marginLeft: 245
+  },
+
+  main_Page: {
+    width: Dimensions.get('window').width,
+    height: 650
   }
 });
+
+const requestPermission = async() => {
+  const response = await Permissions.askAsync(Permissions.CAMERA);
+  console.log(response);
+};
+useEffect(() => {
+    requestPermission();
+}, []);
 
 export default App;
