@@ -4,6 +4,8 @@ import { Shadow, Dimensions, Image, StyleSheet, Text, TextInput, TouchableOpacit
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as Permissions from 'expo-permissions';
+import * as MediaLibrary from 'expo-media-library';
+import { Camera } from 'expo-camera';
 
 const Login = ({ navigation }) => {
   return (
@@ -64,7 +66,9 @@ const SignIn = ({ navigation }) => {
             {flex: 6.5}]}>
         <Image 
           style={styles.signin_Profile}/>
-        <View style={styles.signin_Btn_ProfileTheme}>
+        <View 
+          style={styles.signin_Btn_ProfileTheme}
+          onPress={() => }>
           <Text style={styles.signin_Btn_Profile}> 사진 변경 </Text>
         </View>
 
