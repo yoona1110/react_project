@@ -3,9 +3,6 @@ import { StatusBar } from 'expo-status-bar';
 import { Shadow, Dimensions, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import * as Permissions from 'expo-permissions';
-import * as MediaLibrary from 'expo-media-library';
-import { Camera } from 'expo-camera';
 
 const Login = ({ navigation }) => {
   return (
@@ -68,7 +65,7 @@ const SignIn = ({ navigation }) => {
           style={styles.signin_Profile}/>
         <View 
           style={styles.signin_Btn_ProfileTheme}
-          onPress={() => }>
+          onPress>
           <Text style={styles.signin_Btn_Profile}> 사진 변경 </Text>
         </View>
 
@@ -319,12 +316,12 @@ const styles = StyleSheet.create({
   }
 });
 
-const requestPermission = async() => {
-  const response = await Permissions.askAsync(Permissions.CAMERA);
-  console.log(response);
-};
-useEffect(() => {
-    requestPermission();
-}, []);
+// const requestPermission = async() => {
+//   const response = await Permissions.askAsync(Permissions.CAMERA);
+//   console.log(response);
+// };
+// useEffect(() => {
+//     requestPermission();
+// }, []);
 
 export default App;
