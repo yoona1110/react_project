@@ -1,16 +1,20 @@
 import React, { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Shadow, Dimensions, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Platform, Dimensions, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Button } from 'react-native-web';
 
+// 로그인 페이지
 const Login = ({ navigation }) => {
   return (
     <View 
       style={[styles.container,
-        {backgroundColor: '#FFEDAB'}]}>
+        {alignItems: 'center',
+         backgroundColor: '#FFEDAB'}]}>
       <Text style={styles.login_Title}> 니캉내캉 </Text>
 
+      {/* 아이디, 비밀번호 입력창 부분 */}
       <View 
         style={[styles.login_InputTheme,
           {marginTop: 58}]}>
@@ -28,6 +32,7 @@ const Login = ({ navigation }) => {
            secureTextEntry='true'/> 
       </View>
 
+      {/* 로그인, 회원가입 버튼 */}
       {/* 특정 영역을 지정하여 터치 이벤트를 사용할 수 있음 */}
       <TouchableOpacity 
         style={styles.login_Btn}
@@ -42,25 +47,29 @@ const Login = ({ navigation }) => {
         <Text style={styles.login_Btn_Font}> 로그인 </Text>
       </TouchableOpacity>
 
-
       <StatusBar style="auto" />
     </View>
   );
 }
 
+// 회원가입 페이지
 const SignIn = ({ navigation }) => {
   return (
     <View 
       style={[styles.container,
-        {backgroundColor: '#FFFFFF'}]}>
+        {alignItems: 'center',
+         backgroundColor: '#FFFFFF'}]}>
 
+      {/* 상단부 타이틀 */}
       <View style={styles.signin_TitleTheme}>
         <Text style={styles.signin_Title}> 회원가입 </Text>
       </View>
 
+      {/* 사진 표시창, 선택 버튼 */}
       <View  
         style={[styles.container, 
-            {flex: 6.5}]}>
+            {flex: 6.5,
+             alignItems: 'center'}]}>
         <Image 
           style={styles.signin_Profile}/>
         <View 
@@ -69,11 +78,12 @@ const SignIn = ({ navigation }) => {
           <Text style={styles.signin_Btn_Profile}> 사진 변경 </Text>
         </View>
 
+        {/* 회원 정보 입력창 */}
         <View>
           <View 
             style={[styles.login_InputTheme, 
               {marginTop: 35,
-              marginLeft: 20}]}>
+               marginLeft: 20}]}>
             <Text style={styles.signin_InputFont}> 닉네임 </Text>
             <TextInput style={[styles.login_Input, {marginLeft: 40}]}/>
           </View>
@@ -121,12 +131,13 @@ const SignIn = ({ navigation }) => {
         </View>
       </View>
 
+      {/* 회원가입 버튼 */}
       <View  
         style={styles.container}>
         <TouchableOpacity 
             style={[styles.login_Btn,
               {marginTop: 20,
-              width: 350}]}
+               width: 350}]}
             onPress={() => navigation.navigate('Login')}>
 
             <Text style={styles.login_Btn_Font}> 회원가입 </Text>
@@ -138,12 +149,14 @@ const SignIn = ({ navigation }) => {
   );
 }
 
+// 메인 페이지
 const Main = ({ navigation }) => {
   return (
     <View
       style={[styles.container,
         {backgroundColor: '#FFFFFF'}]}>
 
+      {/* 상단부 */}
       <View 
         style={[styles.signin_TitleTheme,
           {alignItems: 'flex-start',
@@ -153,40 +166,60 @@ const Main = ({ navigation }) => {
           style={[styles.signin_Title,
             {marginLeft: 20}]}> 후평동 </Text>
 
-        <Image source={
-          require('./assets/image/main_notification.png')}
+        <Image 
+          source={require('./assets/image/main_notification.png')}
           style={styles.main_notificationImg}/>
       </View>
 
+      {/* 가운데 게시판 부분 */}
       <View 
         style={[styles.main_Page, 
         styles.container, 
-        {flex: 6.5}]}>
+        {flex: 6.5,
+         alignItems: 'center'}]}>
 
       </View>
 
-      <View style={[styles.container, 
-        {backgroundColor: '#575757'},
+      {/* 하단부 */}
+      <View style={[{
+        flex: 1, 
+        backgroundColor: '#FFFFFF'},
         Platform.select({
           ios: {
-            shadowColor: '#000',
+            shadowColor: '#000000',
             shadowOpacity: 5,
             shadowOffset: {
-              width: 10,
-              height: 10},
-            shadowRadius: 2
+              width: 0,
+              height: -0.1},
+            shadowRadius: 1
           },
           android: {
             elevation: 3
           }})]}>
+
+        <TouchableOpacity 
+          style={styles.main_under_button}
+          Image={'./assets/image/main_home.png'}>
+
+        </TouchableOpacity>
+
+        <TouchableOpacity 
+          style={styles.main_under_button}
+          Image={'./assets/image/main_list.png'}>
+
+        </TouchableOpacity>
+
+        <TouchableOpacity 
+          style={styles.main_under_button}
+          Image={'./assets/image/main_user_info.png'}>
+
+        </TouchableOpacity>
       </View>
 
       <StatusBar style="auto" />
     </View>
   );
 }
-
-
 
 const Stack = createNativeStackNavigator();
 const App = () => {
@@ -209,7 +242,6 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center'
   },
 
   /* 로그인 페이지 */
@@ -303,6 +335,7 @@ const styles = StyleSheet.create({
     marginTop: 13
   },
 
+  /* 메인 페이지 */
   main_notificationImg: {
     width: 30,
     height: 30,
@@ -313,15 +346,12 @@ const styles = StyleSheet.create({
   main_Page: {
     width: Dimensions.get('window').width,
     height: 650
+  },
+
+  main_under_button: {
+    width: 40,
+    height: 40
   }
 });
-
-// const requestPermission = async() => {
-//   const response = await Permissions.askAsync(Permissions.CAMERA);
-//   console.log(response);
-// };
-// useEffect(() => {
-//     requestPermission();
-// }, []);
 
 export default App;
