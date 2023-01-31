@@ -21,9 +21,11 @@ const Main = ({ navigation }) => {
             style={[styles.main_Title,
               {marginLeft: 20}]}> 후평동 </Text>
   
-          <Image 
-            source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/main_notification.png')}
-            style={styles.main_notificationImg}/>
+          <TouchableOpacity>
+            <Image 
+              source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/main_notification.png')}
+              style={styles.main_notificationImg}/>
+          </TouchableOpacity>
         </View>
   
         {/* 가운데 게시판 부분 */}
@@ -36,9 +38,7 @@ const Main = ({ navigation }) => {
         </View>
   
         {/* 하단부 */}
-        <View style={[{
-          flex: 1, 
-          backgroundColor: '#FFFFFF'},
+        <View style={[styles.main_under,
           Platform.select({
             ios: {
               shadowColor: '#000000',
@@ -46,27 +46,34 @@ const Main = ({ navigation }) => {
               shadowOffset: {
                 width: 0,
                 height: -0.1},
-              shadowRadius: 1
+              shadowRadius: 0.1
             },
             android: {
               elevation: 3
             }})]}>
   
-          <TouchableOpacity 
-            style={styles.main_under_button}
-            source={'/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/main_home.png'}>
+          <TouchableOpacity>
+            <Image
+              style={styles.main_under_button}
+              source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_home.png')} />
   
           </TouchableOpacity>
   
-          <TouchableOpacity 
-            style={styles.main_under_button}
-            source={'/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/main_list.png'}>
+          <TouchableOpacity>
+            <Image
+              style={[
+                styles.main_under_button,
+                {marginLeft: 95}]}
+              source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_list.png')} />
   
           </TouchableOpacity>
   
-          <TouchableOpacity 
-            style={styles.main_under_button}
-            source={'/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/main_user.png'}>
+          <TouchableOpacity>
+            <Image
+              style={[
+                styles.main_under_button,
+                {marginLeft: 95}]}
+              source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_user_info.png')} />
   
           </TouchableOpacity>
         </View>
@@ -109,9 +116,17 @@ const Main = ({ navigation }) => {
       height: 650
     },
   
+    main_under: {
+      flex: 1, 
+      backgroundColor: '#FFFFFF',
+      flexDirection: 'row',
+      alignItems: 'center'
+    },
+
     main_under_button: {
       width: 40,
-      height: 40
+      height: 40,
+      marginLeft: 40
     }
   });
 
