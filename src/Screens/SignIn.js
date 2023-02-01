@@ -1,8 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Platform, Dimensions, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Dimensions, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 // 회원가입 페이지
 const SignIn = ({ navigation }) => {
