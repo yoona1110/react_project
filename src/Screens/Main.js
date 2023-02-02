@@ -71,7 +71,7 @@ const Main = ({ navigation }) => {
               style={[
                 styles.main_under_button,
                 {marginLeft: 95}]}
-              source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_user_info.png')}/>
+              source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_user_info.png')} />
   
           </TouchableOpacity>
         </View>
