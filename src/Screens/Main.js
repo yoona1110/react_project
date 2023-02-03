@@ -5,24 +5,16 @@ import { Platform, Dimensions, Image, StyleSheet, Text, TouchableOpacity, View }
 // 메인 페이지
 const Main = ({ navigation }) => {
     return (
-      <View
-        style={[styles.container,
-          {backgroundColor: '#FFFFFF'}]}>
+      <View style={styles.container}>
   
         {/* 상단부 */}
-        <View 
-          style={[styles.main_TitleTheme,
-            {alignItems: 'flex-start',
-            flexDirection: 'row',
-            flex: 1}]}>
-          <Text 
-            style={[styles.main_Title,
-              {marginLeft: 20}]}> 후평동 </Text>
+        <View style={styles.main_TitleTheme}>
+          <Text style={styles.main_Title}> 후평동 </Text>
   
           <TouchableOpacity>
             <Image 
-              source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/main_notification.png')}
-              style={styles.main_notificationImg}/>
+              style={styles.main_notificationImg}
+              source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_notification.png')} />
           </TouchableOpacity>
         </View>
   
@@ -37,7 +29,9 @@ const Main = ({ navigation }) => {
             <View style={styles.main_BulletinBoard}>
               <Text style={styles.main_bb_title}> 메인 게시판 </Text>
 
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => navigation.navigate('BulletinBoard_Main')}>
+
                 <Text style={styles.main_bb_detail}> 더보기 </Text>
               </TouchableOpacity>
             </View>
@@ -46,7 +40,9 @@ const Main = ({ navigation }) => {
 
             {/* 즐겨찾기 */}
             <View style={styles.main_BulletinBoard}>
-              <Text style={styles.main_bb_title}> 즐겨찾기 </Text>
+              <Text style={[
+                styles.main_bb_title, 
+                {marginRight: 200}]}> 즐겨찾기 </Text>
 
               <TouchableOpacity>
                 <Text style={styles.main_bb_detail}> 더보기 </Text>
@@ -59,7 +55,8 @@ const Main = ({ navigation }) => {
             <View style={styles.main_BulletinBoard}>
               <Text style={styles.main_bb_title}> HOT 게시판 </Text>
 
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => navigation.navigate('BulletinBoard_Hot')}>
                 <Text style={styles.main_bb_detail}> 더보기 </Text>
               </TouchableOpacity>
             </View>
@@ -116,6 +113,7 @@ const Main = ({ navigation }) => {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
+      backgroundColor: '#FFFFFF'
     },
   
     /* 메인 페이지 */
@@ -123,7 +121,8 @@ const Main = ({ navigation }) => {
       fontSize: 25,
       fontWeight: 'bold',
       color: '#575757',
-      marginTop: 53
+      marginTop: 33,
+      marginLeft: 20
     },
 
     main_TitleTheme: {
@@ -131,13 +130,14 @@ const Main = ({ navigation }) => {
       width: Dimensions.get('window').width,
       height: 100,
       backgroundColor: '#FFEDAB',
-      alignItems: 'center'
+      alignItems: 'center',
+      flexDirection: 'row'
     },
 
     main_notificationImg: {
       width: 25,
       height: 25,
-      marginTop: 53,
+      marginTop: 33,
       marginLeft: 250
     },
   
