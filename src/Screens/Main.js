@@ -32,7 +32,39 @@ const Main = ({ navigation }) => {
           styles.container, 
           {flex: 6.5,
            alignItems: 'center'}]}>
-  
+
+            {/* 메인 게시판 */}
+            <View style={styles.main_BulletinBoard}>
+              <Text style={styles.main_bb_title}> 메인 게시판 </Text>
+
+              <TouchableOpacity>
+                <Text style={styles.main_bb_detail}> 더보기 </Text>
+              </TouchableOpacity>
+            </View>
+
+            <View style={styles.main_bb_theme}></View>
+
+            {/* 즐겨찾기 */}
+            <View style={styles.main_BulletinBoard}>
+              <Text style={styles.main_bb_title}> 즐겨찾기 </Text>
+
+              <TouchableOpacity>
+                <Text style={styles.main_bb_detail}> 더보기 </Text>
+              </TouchableOpacity>
+            </View>
+
+            <View style={styles.main_bb_theme}></View>
+
+            {/* HOT 게시판 */}
+            <View style={styles.main_BulletinBoard}>
+              <Text style={styles.main_bb_title}> HOT 게시판 </Text>
+
+              <TouchableOpacity>
+                <Text style={styles.main_bb_detail}> 더보기 </Text>
+              </TouchableOpacity>
+            </View>
+
+            <View style={styles.main_bb_theme}></View>
         </View>
   
         {/* 하단부 */}
@@ -61,7 +93,7 @@ const Main = ({ navigation }) => {
             <Image
               style={[
                 styles.main_under_button,
-                {marginLeft: 95}]}
+                {marginLeft: 105}]}
               source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_list.png')} />
   
           </TouchableOpacity>
@@ -70,7 +102,7 @@ const Main = ({ navigation }) => {
             <Image
               style={[
                 styles.main_under_button,
-                {marginLeft: 95}]}
+                {marginLeft: 105}]}
               source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_user_info.png')} />
   
           </TouchableOpacity>
@@ -103,15 +135,41 @@ const Main = ({ navigation }) => {
     },
 
     main_notificationImg: {
-      width: 30,
-      height: 30,
-      marginTop: 51,
-      marginLeft: 245
+      width: 25,
+      height: 25,
+      marginTop: 53,
+      marginLeft: 250
     },
   
     main_Page: {
       width: Dimensions.get('window').width,
       height: 650
+    },
+
+    main_BulletinBoard: {
+      marginTop: 19, 
+      flexDirection: 'row'
+    },
+
+    main_bb_title: {
+      fontSize: 21, 
+      color: '#525252', 
+      fontWeight: 'bold',
+      marginRight: 180
+    },
+
+    main_bb_detail: {
+      fontSize: 20, 
+      color: '#525252'
+    },
+
+    main_bb_theme: {
+      width: 340,
+      height: 165,
+      borderWidth: 1, 
+      borderColor: '#525252', 
+      borderRadius: 15,
+      marginTop: 5
     },
   
     main_under: {
@@ -122,9 +180,9 @@ const Main = ({ navigation }) => {
     },
 
     main_under_button: {
-      width: 40,
-      height: 40,
-      marginLeft: 40
+      width: 30,
+      height: 30,
+      marginLeft: 45
     }
   });
 

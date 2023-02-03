@@ -1,6 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Dimensions, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { KeyboardAvoidingView, Dimensions, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 // 회원가입 페이지
 const SignIn = ({ navigation }) => {
@@ -29,7 +29,7 @@ const SignIn = ({ navigation }) => {
           </View>
   
           {/* 회원 정보 입력창 */}
-          <View>
+          <KeyboardAvoidingView behavior='padding'>
             <View 
               style={[styles.signin_InputTheme, 
                 {marginTop: 35,
@@ -78,7 +78,7 @@ const SignIn = ({ navigation }) => {
               <Text style={styles.signin_InputFont}> 주소지 </Text>
               <TextInput style={[styles.signin_Input, {marginLeft: 40}]}/>
             </View>
-          </View>
+          </KeyboardAvoidingView>
         </View>
   
         {/* 회원가입 버튼 */}
