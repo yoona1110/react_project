@@ -13,7 +13,9 @@ const BulletinBoard_Main = ({navigation}) => {
 
             {/* 게시글 부분 */}
             <View style={styles.bb_list}>
-                <TouchableOpacity style={styles.bb_btn_add}>
+                <TouchableOpacity 
+                    style={styles.bb_btn_add}
+                    onPress={() => navigation.navigate('BulletinBoard_Write')}>
                     <Image 
                         style={styles.bb_btnImg}
                         source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_plus.png')} />

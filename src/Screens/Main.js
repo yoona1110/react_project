@@ -182,6 +182,7 @@ const Main = ({ navigation }) => {
     main_under_button: {
       width: 30,
       height: 30,
+      marginButtom: 5,
       marginLeft: 45
     }
   });
