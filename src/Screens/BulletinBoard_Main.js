@@ -6,13 +6,24 @@ const BulletinBoard_Main = ({navigation}) => {
     return (
         <View style={styles.container}>
             {/* 상단부 */}
-            <View style={styles.bb_TitleTheme}>
+            <View style={styles.bb_titletheme}>
+                <TouchableOpacity 
+                    onPress={() => navigation.navigate('Main')}>
+                        
+                    <Image 
+                        style={styles.bb_btn_back}
+                        source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_back.png')} />
+                </TouchableOpacity>
                 <Text style={styles.bb_title}> 메인 게시판 </Text>
 
             </View>
 
             {/* 게시글 부분 */}
             <View style={styles.bb_list}>
+                <Text style={{
+                    marginTop: 320, 
+                    marginLeft: 130}}> 작성된 게시글이 없습니다. </Text> 
+                    
                 <TouchableOpacity 
                     style={styles.bb_btn_add}
                     onPress={() => navigation.navigate('BulletinBoard_Write')}>
@@ -37,10 +48,10 @@ const styles = StyleSheet.create({
         fontSize: 25,
         fontWeight: 'bold',
         marginTop: 33,
-        marginLeft: 144
+        marginLeft: 103
     },
 
-    bb_TitleTheme: {
+    bb_titletheme: {
         flex: 1,
         width: Dimensions.get('window').width,
         height: 100,
@@ -48,6 +59,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row'
     },
+
+    bb_btn_back: {
+        width: 28,
+        height: 28,
+        marginTop: 33,
+        marginLeft: 10
+    }, 
 
     /* 게시글 부분 */
     bb_list: {
@@ -60,7 +78,7 @@ const styles = StyleSheet.create({
         height: 70,
         backgroundColor: '#FFEDAB',
         borderRadius: 35,
-        marginTop: 635,
+        marginTop: 305,
         marginLeft: 280, 
         alignItems: 'center'
     },
@@ -70,7 +88,6 @@ const styles = StyleSheet.create({
         height: 25,
         marginTop: 22
     }
-
 });
 
 export default BulletinBoard_Main;

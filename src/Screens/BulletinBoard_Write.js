@@ -1,36 +1,112 @@
 import React from 'react';
-import { Dimensions, TouchableOpacity } from 'react-native';
+import { Dimensions, TouchableOpacity, StyleSheet, View, Text, Image, TextInput, KeyboardAvoidingView } from 'react-native';
 
 const BulletinBoard_Write = ({navigation}) => {
     return(
         <View style={styles.container}>
+                
             {/* 상단부 */}
             <View style={styles.write_title}>
+                <TouchableOpacity
+                    onPress={() => navigation.navigate('BulletinBoard_Main')}>
 
+                    <Image 
+                        style={styles.write_btn_back}
+                        source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_back.png')}/>
+                </TouchableOpacity>
             </View>
 
             {/* 게시글 작성 부분 */}
-            <View>
-
+            <View style={styles.write_body}>
+                <TextInput 
+                    style={styles.write_bodyTitle}
+                    placeholder={'글 제목'} />
+                <TextInput
+                    style={styles.write_bodyContent}
+                    placeholder={'내용을 입력하세요.'}
+                    multiline={true} />
             </View>
 
             {/* 하단부 */}
-            <TouchableOpacity>
-                <Text> 완료 </Text>
-            </TouchableOpacity>
+            <View style={styles.container}>
+                <TouchableOpacity style={styles.write_btn_theme}>
+                    <Text style={styles.write_btn_ok}> 완료 </Text>
+                </TouchableOpacity>
+            </View>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        alignItems: 'center'
     },
 
+    /* 상단부 */
     write_title: {
         flex: 1,
         width: Dimensions.get('window').width,
-        height: 100
+        height: 100,
+        backgroundColor: '#FFEDAB',
+        flexDirection: 'row'
+    },
+
+    write_btn_back: {
+        width: 28,
+        height: 28,
+        marginTop: 55,
+        marginLeft: 10
+    },
+
+    /* 게시글 작성 부분 */
+    write_body: {
+        flex: 6.5,
+    },
+
+    write_bodyTitle: {
+        width: 350,
+        height: 30,
+        padding: 0,
+        margin: 0,
+        color: '#575757',
+        fontSize: 20,
+        marginTop: 23,
+        margin: 0,
+        padding: 0,
+        paddingLeft: 5,
+        paddingBottom: 10,
+        borderBottomColor: '#575757',
+        borderBottomWidth: 1
+    },
+
+    write_bodyContent: {
+        width: 350,
+        height: 580,
+        color: '#575757',
+        fontSize: 20,
+        marginTop: 15,
+        paddingTop: 10,
+        paddingLeft: 10,
+        borderColor: '#575757',
+        borderWidth: 1,
+        textAlignVertical: 'top'
+    },
+
+    write_btn_theme: {
+        width: 350,
+        height: 55,
+        backgroundColor: '#FFE589',
+        paddingTop: 15,
+        marginTop: 20,
+        borderRadius: 10
+    },
+
+    write_btn_ok: {
+        textAlign: 'center',
+        fontSize: 24,
+        fontWeight: 'bold',
+        color: '#575757'
     }
 })
 export default BulletinBoard_Write;

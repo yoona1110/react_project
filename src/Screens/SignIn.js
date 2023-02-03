@@ -85,9 +85,7 @@ const SignIn = ({ navigation }) => {
         <View  
           style={styles.container}>
           <TouchableOpacity 
-              style={[styles.signin_Btn,
-                {marginTop: 20,
-                 width: 350}]}
+              style={styles.signin_Btn}
               onPress={() => navigation.navigate('Login')}>
   
               <Text style={styles.signin_Btn_Font}> 회원가입 </Text>
@@ -165,11 +163,11 @@ const SignIn = ({ navigation }) => {
     },
 
     signin_Btn: {
-      width: 320,
+      width: 350,
       height: 55,
       backgroundColor: '#FFE589',
       paddingTop: 15,
-      marginTop: 50,
+      marginTop: 20,
       borderRadius: 10
     },
 

@@ -8,8 +8,8 @@ const Main = ({ navigation }) => {
       <View style={styles.container}>
   
         {/* 상단부 */}
-        <View style={styles.main_TitleTheme}>
-          <Text style={styles.main_Title}> 후평동 </Text>
+        <View style={styles.main_titleTheme}>
+          <Text style={styles.main_title}> 후평동 </Text>
   
           <TouchableOpacity>
             <Image 
@@ -20,13 +20,13 @@ const Main = ({ navigation }) => {
   
         {/* 가운데 게시판 부분 */}
         <View 
-          style={[styles.main_Page, 
+          style={[styles.main_page, 
           styles.container, 
           {flex: 6.5,
            alignItems: 'center'}]}>
 
             {/* 메인 게시판 */}
-            <View style={styles.main_BulletinBoard}>
+            <View style={styles.main_bulletinBoard}>
               <Text style={styles.main_bb_title}> 메인 게시판 </Text>
 
               <TouchableOpacity
@@ -39,7 +39,7 @@ const Main = ({ navigation }) => {
             <View style={styles.main_bb_theme}></View>
 
             {/* 즐겨찾기 */}
-            <View style={styles.main_BulletinBoard}>
+            <View style={styles.main_bulletinBoard}>
               <Text style={[
                 styles.main_bb_title, 
                 {marginRight: 200}]}> 즐겨찾기 </Text>
@@ -52,7 +52,7 @@ const Main = ({ navigation }) => {
             <View style={styles.main_bb_theme}></View>
 
             {/* HOT 게시판 */}
-            <View style={styles.main_BulletinBoard}>
+            <View style={styles.main_bulletinBoard}>
               <Text style={styles.main_bb_title}> HOT 게시판 </Text>
 
               <TouchableOpacity
@@ -117,7 +117,7 @@ const Main = ({ navigation }) => {
     },
   
     /* 메인 페이지 */
-    main_Title: {
+    main_title: {
       fontSize: 25,
       fontWeight: 'bold',
       color: '#575757',
@@ -125,7 +125,7 @@ const Main = ({ navigation }) => {
       marginLeft: 20
     },
 
-    main_TitleTheme: {
+    main_titleTheme: {
       flex: 1,
       width: Dimensions.get('window').width,
       height: 100,
@@ -141,12 +141,12 @@ const Main = ({ navigation }) => {
       marginLeft: 250
     },
   
-    main_Page: {
+    main_page: {
       width: Dimensions.get('window').width,
       height: 650
     },
 
-    main_BulletinBoard: {
+    main_bulletinBoard: {
       marginTop: 19, 
       flexDirection: 'row'
     },
