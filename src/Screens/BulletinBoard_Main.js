@@ -1,5 +1,4 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
 import { TouchableOpacity, Dimensions, StyleSheet, Image, Text, View } from 'react-native';
 
 const BulletinBoard_Main = ({navigation}) => {
@@ -39,7 +38,8 @@ const BulletinBoard_Main = ({navigation}) => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        backgroundColor: '#FFFFFF'
     },
 
     /* 상단부 */

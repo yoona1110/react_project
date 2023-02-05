@@ -5,6 +5,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from "./src/Screens/Login";
 import SignIn from "./src/Screens/SignIn";
 import Main from "./src/Screens/Main";
+import Bookmark from "./src/Screens/Bookmark";
+
 import BulletinBoard_Main from './src/Screens/BulletinBoard_Main';
 import BulletinBoard_Hot from './src/Screens/BulletinBoard_Hot';
 
@@ -21,8 +23,10 @@ export default function App() {
         screenOptions={{headerShown: false}}>
 
         <Stack.Screen name="Login" component={Login}/>
-        <Stack.Screen name="Main" component={Main}/>
         <Stack.Screen name="SignIn" component={SignIn}/>
+        <Stack.Screen name="Main" component={Main}/>
+        <Stack.Screen name="Bookmark" component={Bookmark}/>
+
         <Stack.Screen name="BulletinBoard_Main" component={BulletinBoard_Main}/>
         <Stack.Screen name="BulletinBoard_Hot" component={BulletinBoard_Hot}/>
         <Stack.Screen name="BulletinBoard_Write" component={BulletinBoard_Write}/>

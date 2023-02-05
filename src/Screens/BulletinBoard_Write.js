@@ -33,19 +33,6 @@ const BulletinBoard_Write = ({navigation}) => {
                     placeholder={'내용을 입력하세요.'}
                     multiline={true} />
             </View>
-
-            {/* 하단부 */}
-            {/* <KeyboardAvoidingView 
-                style={styles.container} 
-                behavior={'padding'}>
-                    
-                <TouchableOpacity 
-                    style={styles.write_btn_theme}
-                    onPress={() => navigation.navigate('BulletinBoard_Main')}>
-
-                    <Text style={styles.write_btn_ok}> 완료 </Text>
-                </TouchableOpacity>
-            </KeyboardAvoidingView> */}
         </View>
     );
 }
@@ -53,6 +40,7 @@ const BulletinBoard_Write = ({navigation}) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: '#FFFFFF',
         alignItems: 'center'
     },
 
@@ -114,13 +102,6 @@ const styles = StyleSheet.create({
         marginTop: 20,
         borderRadius: 10
     },
-
-    // write_btn_ok: {
-    //     textAlign: 'center',
-    //     fontSize: 24,
-    //     fontWeight: 'bold',
-    //     color: '#575757'
-    // }
 
     write_btn_ok: {
         fontSize: 24,

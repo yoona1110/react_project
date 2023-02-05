@@ -22,8 +22,7 @@ const Main = ({ navigation }) => {
         <View 
           style={[styles.main_page, 
           styles.container, 
-          {flex: 6.5,
-           alignItems: 'center'}]}>
+          {flex: 6.5}]}>
 
             {/* 메인 게시판 */}
             <View style={styles.main_bulletinBoard}>
@@ -42,9 +41,11 @@ const Main = ({ navigation }) => {
             <View style={styles.main_bulletinBoard}>
               <Text style={[
                 styles.main_bb_title, 
-                {marginRight: 200}]}> 즐겨찾기 </Text>
+                {marginRight: 157}]}> 즐겨찾는 게시판 </Text>
 
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => navigation.navigate('Bookmark')}>
+
                 <Text style={styles.main_bb_detail}> 더보기 </Text>
               </TouchableOpacity>
             </View>
@@ -76,8 +77,7 @@ const Main = ({ navigation }) => {
               shadowRadius: 0.1
             },
             android: {
-              elevation: 3
-            }})]}>
+              elevation: 3 }})]}>
   
           <TouchableOpacity>
             <Image
@@ -86,7 +86,9 @@ const Main = ({ navigation }) => {
   
           </TouchableOpacity>
   
-          <TouchableOpacity>
+          <TouchableOpacity 
+            onPress={() => navigation.navigate('Bookmark')}>
+
             <Image
               style={[
                 styles.main_under_button,
@@ -143,7 +145,8 @@ const Main = ({ navigation }) => {
   
     main_page: {
       width: Dimensions.get('window').width,
-      height: 650
+      height: 650,
+      alignItems: 'center'
     },
 
     main_bulletinBoard: {
@@ -159,8 +162,9 @@ const Main = ({ navigation }) => {
     },
 
     main_bb_detail: {
-      fontSize: 20, 
-      color: '#525252'
+      fontSize: 18, 
+      color: '#525252',
+      marginTop: 2
     },
 
     main_bb_theme: {

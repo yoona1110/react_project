@@ -20,7 +20,8 @@ const BulletinBoard_Hot = ({navigation}) => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        backgroundColor: '#FFFFFF'
     },
 
     /* 상단부 */
