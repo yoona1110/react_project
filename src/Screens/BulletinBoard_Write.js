@@ -14,13 +14,20 @@ const BulletinBoard_Write = ({navigation}) => {
                         style={styles.write_btn_back}
                         source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_back.png')}/>
                 </TouchableOpacity>
+
+                <TouchableOpacity
+                    onPress={() => navigation.navigate('BulletinBoard_Main')}>
+                        <Text style={styles.write_btn_ok}> 완료 </Text>
+                    </TouchableOpacity>
             </View>
 
             {/* 게시글 작성 부분 */}
-            <View style={styles.write_body}>
+            <View 
+                style={styles.write_body}>
                 <TextInput 
                     style={styles.write_bodyTitle}
                     placeholder={'글 제목'} />
+
                 <TextInput
                     style={styles.write_bodyContent}
                     placeholder={'내용을 입력하세요.'}
@@ -28,11 +35,17 @@ const BulletinBoard_Write = ({navigation}) => {
             </View>
 
             {/* 하단부 */}
-            <View style={styles.container}>
-                <TouchableOpacity style={styles.write_btn_theme}>
+            {/* <KeyboardAvoidingView 
+                style={styles.container} 
+                behavior={'padding'}>
+                    
+                <TouchableOpacity 
+                    style={styles.write_btn_theme}
+                    onPress={() => navigation.navigate('BulletinBoard_Main')}>
+
                     <Text style={styles.write_btn_ok}> 완료 </Text>
                 </TouchableOpacity>
-            </View>
+            </KeyboardAvoidingView> */}
         </View>
     );
 }
@@ -61,7 +74,7 @@ const styles = StyleSheet.create({
 
     /* 게시글 작성 부분 */
     write_body: {
-        flex: 6.5,
+        flex: 7.5,
     },
 
     write_bodyTitle: {
@@ -82,7 +95,7 @@ const styles = StyleSheet.create({
 
     write_bodyContent: {
         width: 350,
-        height: 580,
+        height: 620,
         color: '#575757',
         fontSize: 20,
         marginTop: 15,
@@ -102,11 +115,19 @@ const styles = StyleSheet.create({
         borderRadius: 10
     },
 
+    // write_btn_ok: {
+    //     textAlign: 'center',
+    //     fontSize: 24,
+    //     fontWeight: 'bold',
+    //     color: '#575757'
+    // }
+
     write_btn_ok: {
-        textAlign: 'center',
         fontSize: 24,
         fontWeight: 'bold',
-        color: '#575757'
+        color: '#575757',
+        marginTop: 53,
+        marginLeft: 285
     }
 })
 export default BulletinBoard_Write;
