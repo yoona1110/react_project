@@ -1,4 +1,5 @@
 import React from 'react';
+import { StatusBar } from 'expo-status-bar';
 import { Dimensions, TouchableOpacity, StyleSheet, View, Text, Image, TextInput, KeyboardAvoidingView } from 'react-native';
 
 const BulletinBoard_Write = ({navigation}) => {
@@ -33,6 +34,7 @@ const BulletinBoard_Write = ({navigation}) => {
                     placeholder={'내용을 입력하세요.'}
                     multiline={true} />
             </View>
+            <StatusBar style="auto" />
         </View>
     );
 }

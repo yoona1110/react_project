@@ -14,6 +14,8 @@ const BulletinBoard_Hot = ({navigation}) => {
             {/* 게시글 부분 */}
             <View style={styles.bb_list}>
             </View>
+
+            <StatusBar style="auto" />
         </View>
     );
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { StatusBar } from 'expo-status-bar';
 import { TouchableOpacity, Dimensions, StyleSheet, Image, Text, View } from 'react-native';
 
 const BulletinBoard_Main = ({navigation}) => {
@@ -32,6 +33,8 @@ const BulletinBoard_Main = ({navigation}) => {
 
                 </TouchableOpacity>
             </View>
+            
+            <StatusBar style="auto" />
         </View>
     );
 }

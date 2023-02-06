@@ -97,7 +97,9 @@ const Main = ({ navigation }) => {
   
           </TouchableOpacity>
   
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Setting')}>
+
             <Image
               style={[
                 styles.main_under_button,

@@ -2,68 +2,61 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { TouchableOpacity, Dimensions, StyleSheet, Image, Text, View } from 'react-native';
 
-const Bookmark = ({navigation}) => {
+const Setting = ({navigation}) => {
     return (
         <View style={styles.container}>
-            {/* 상딘부 */}
-            <View style={styles.bm_titleTheme}>
-                <Text style={styles.bm_title}> 게시판 </Text>
+            {/* 상단부 */}
+            <View style={styles.st_titleTheme}>
+                <Text style={styles.st_title}> 환경설정 </Text>
             </View>
 
-            {/* 가운데 개사펀 목록부분 */}
-            <View style={styles.bm_page}>
-                <Text style={styles.bm_page_title}> 즐겨찾는 게시판 </Text>
-                <View style={styles.bm_page_theme}></View>
+            {/* 중간부 */}
+            <View style={styles.st_center}>
 
-                <Text style={[
-                    styles.bm_page_title, 
-                    {marginRight: 240}]}> 전체 게시판 </Text>
-                <View style={[
-                    styles.bm_page_theme, 
-                    {height: 400}]}></View>
             </View>
 
             {/* 하단부 */}
-            <View style={[styles.bm_under,
+            <View style={[styles.st_under,
                 Platform.select({
                     ios: {
                         shadowColor: '#000000',
                         shadowOpacity: 5,
                         shadowOffset: {
                             width: 0,
-                            height: -0.1 
+                            height: -0.1
                         },
                         shadowRadius: 0.1
                     },
                     android: {
-                        elevation: 3 
+                        elevation: 3
                     }
                 })]}>
-  
+
                 <TouchableOpacity
                     onPress={() => navigation.navigate('Main')}>
                     <Image
-                        style={styles.bm_under_button}
+                        style={styles.st_under_button}
                         source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_home.png')} />
   
                 </TouchableOpacity>
   
-                <TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => navigation.navigate('Bookmark')}>
                     <Image
                     style={[
-                        styles.bm_under_button,
+                        styles.st_under_button,
                         {marginLeft: 105}]}
                     source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_list.png')} />
                 </TouchableOpacity>
   
-                <TouchableOpacity
-                    onPress={() => navigation.navigate('Setting')}>
+                <TouchableOpacity>
 
                     <Image style={[
-                        styles.bm_under_button,
+                        styles.st_under_button,
                         {marginLeft: 105}]}
                         source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_user_info.png')} />
                 </TouchableOpacity>
+
             </View>
 
             <StatusBar style="auto" />
@@ -77,61 +70,44 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFFFFF'
     },
 
-    bm_title: {
+    st_title: {
         fontSize: 25,
         fontWeight: 'bold',
         color: '#575757',
         marginTop: 33,
-        marginLeft: 164
-      },
-  
-      bm_titleTheme: {
+        marginLeft: 158
+    },
+
+    st_titleTheme: {
         flex: 1,
         width: Dimensions.get('window').width,
         height: 100,
         backgroundColor: '#FFEDAB',
         alignItems: 'center',
         flexDirection: 'row'
-      },
+    },
 
-      bm_page: {
+    st_center: {
         flex: 6.5,
         width: Dimensions.get('window').width,
         height: 650,
         alignItems: 'center'
-      },
-
-      bm_page_title: {
-        fontSize: 21, 
-        color: '#525252', 
-        fontWeight: 'bold',
-        marginTop: 19,
-        marginRight: 210
-      },
-
-      bm_page_theme: {
-        width: 340,
-        height: 200,
-        borderWidth: 1, 
-        borderColor: '#525252', 
-        borderRadius: 15,
-        marginTop: 5
-      },
-
-      bm_under: {
+    },
+     
+    st_under: {
         flex: 1, 
         width: Dimensions.get('window').width,
         backgroundColor: '#FFFFFF',
         flexDirection: 'row',
         alignItems: 'center'
-      },
-  
-      bm_under_button: {
+    },
+
+    st_under_button: {
         width: 30,
         height: 30,
         marginButtom: 5,
         marginLeft: 45
-      }
+    }
 });
 
-export default Bookmark;
+export default Setting;
