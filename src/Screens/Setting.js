@@ -12,7 +12,8 @@ const Setting = ({navigation}) => {
 
             {/* 중간부 */}
             <View style={styles.st_center}>
-
+                <Text> 로그아웃 </Text>
+                <Text> 회원 탈퇴 </Text>
             </View>
 
             {/* 하단부 */}
