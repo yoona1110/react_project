@@ -12,8 +12,17 @@ const Setting = ({navigation}) => {
 
             {/* 중간부 */}
             <View style={styles.st_center}>
-                <Text> 로그아웃 </Text>
-                <Text> 회원탈퇴 </Text>
+                <TouchableOpacity
+                    style={styles.st_btn}
+                    onPress={() => navigation.navigate('Login')}>
+                        <Text style={styles.st_btnFont}> 로그아웃 </Text>
+                </TouchableOpacity>
+                
+                <TouchableOpacity
+                    style={styles.st_btn}
+                    onPress={() => navigation.navigate('Login')}>
+                        <Text style={styles.st_btnFont}> 회원탈퇴 </Text>
+                    </TouchableOpacity>
             </View>
 
             {/* 하단부 */}
@@ -94,6 +103,22 @@ const styles = StyleSheet.create({
         height: 650,
         alignItems: 'center'
     },
+
+    st_btn: {
+        width: 320,
+        height: 55,
+        backgroundColor: '#FFE589',
+        paddingTop: 15,
+        marginTop: 15,
+        borderRadius: 10
+      },
+    
+    st_btnFont: {
+        textAlign: 'center',
+        fontSize: 24,
+        fontWeight: 'bold',
+        color: '#575757'
+      },
      
     st_under: {
         flex: 1, 
