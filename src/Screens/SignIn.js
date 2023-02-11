@@ -21,12 +21,12 @@ const SignIn = ({ navigation }) => {
               {flex: 6.5,
                alignItems: 'center'}]}>
           <Image 
-            style={styles.signin_Profile}/>
-          <View 
+            style={styles.signin_Profile} />
+          <TouchableOpacity 
             style={styles.signin_Btn_ProfileTheme}
             onPress>
             <Text style={styles.signin_Btn_Profile}> 사진 변경 </Text>
-          </View>
+          </TouchableOpacity>
   
           {/* 회원 정보 입력창 */}
           <KeyboardAvoidingView behavior='padding'>

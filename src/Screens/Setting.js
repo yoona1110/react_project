@@ -12,17 +12,80 @@ const Setting = ({navigation}) => {
 
             {/* 중간부 */}
             <View style={styles.st_center}>
-                <TouchableOpacity
-                    style={styles.st_btn}
-                    onPress={() => navigation.navigate('Login')}>
-                        <Text style={styles.st_btnFont}> 로그아웃 </Text>
-                </TouchableOpacity>
+                {/* 프로필 설정 부분 */}
+                <View style={styles.st_profile_theme}>
+                    <Image style={styles.st_profile}/>
+                    <View>
+                        <TouchableOpacity 
+                            style={[
+                                styles.st_btn_profileTheme, 
+                                {marginTop: 0}]}>
+                            <Text style={styles.st_btn_profile}> 이미지 수정 </Text>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity 
+                            style={styles.st_btn_profileTheme}>
+                            <Text style={styles.st_btn_profile}> 회원정보 수정 </Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
                 
-                <TouchableOpacity
-                    style={styles.st_btn}
-                    onPress={() => navigation.navigate('Login')}>
-                        <Text style={styles.st_btnFont}> 회원탈퇴 </Text>
+                {/* 회원정보 부분 */}
+                <View>  
+                    <View 
+                        style={[
+                            styles.st_inputTheme, 
+                            {marginTop: 35}]}>
+                        <Text style={styles.st_inputFont}> 닉네임 </Text>
+                        <View style={styles.st_inputBackground}>
+                            <Text style={styles.st_input}> </Text>
+                        </View>
+                    </View>
+  
+                    <View 
+                        style={styles.st_inputTheme}>
+                        <Text style={styles.st_inputFont}> 아이디 </Text>
+                        <View style={styles.st_inputBackground}>
+                            <Text style={styles.st_input}> </Text>
+                        </View>
+                    </View>
+  
+                    <View 
+                        style={styles.st_inputTheme}>
+                        <Text style={styles.st_inputFont}> 이메일 </Text>
+                        <View 
+                            style={styles.st_inputBackground}>
+                            <Text style={styles.st_input}> azi@naver.com </Text>
+                        </View>
+                    </View>
+  
+                    <View 
+                        style={styles.st_inputTheme}>
+                        <Text style={styles.st_inputFont}> 주소지 </Text>
+                        <View 
+                            style={styles.st_inputBackground}>
+                            <Text 
+                                style={[
+                                    styles.st_input, 
+                                    {paddingTop: 8}]}> 허리도 가늘군 만지면 부러지리 개미아파트 1동 601호 </Text>
+                        </View>
+                    </View>
+                </View>
+
+                {/* 로그아웃, 회원탈퇴 부분 */}
+                <View style={{marginTop: 30}}>
+                    <TouchableOpacity
+                        style={styles.st_btn}
+                        onPress={() => navigation.navigate('Login')}>
+                            <Text style={styles.st_btnFont}> 로그아웃 </Text>
                     </TouchableOpacity>
+                    
+                    <TouchableOpacity
+                        style={styles.st_btn}
+                        onPress={() => navigation.navigate('Login')}>
+                            <Text style={styles.st_btnFont}> 회원탈퇴 </Text>
+                    </TouchableOpacity> 
+                </View>
             </View>
 
             {/* 하단부 */}
@@ -103,6 +166,62 @@ const styles = StyleSheet.create({
         height: 650,
         alignItems: 'center'
     },
+
+    st_profile: {
+        width: 130,
+        height: 130,
+        backgroundColor: '#FAFAFA',
+        borderRadius: 10
+    }, 
+    
+    st_profile_theme: {
+        flexDirection: 'row', 
+        marginTop: 40 
+    },
+
+    st_btn_profileTheme: {
+        width: 150,
+        height: 40,
+        backgroundColor: '#FFE589',
+        borderRadius: 10,
+        marginTop: 13,
+        marginLeft: 25,
+        alignItems: 'center'
+    },
+    
+    st_btn_profile: {
+        fontSize: 18,
+        color: '#575757',
+        marginTop: 10
+    },
+
+    st_input: {
+        fontSize: 17,
+        paddingTop: 15,
+        paddingLeft: 15,
+        paddingRight: 15
+      },
+  
+      st_inputFont: {
+        fontSize: 20,
+        color: '#575757',
+        marginTop: 15
+      },
+  
+      st_inputTheme: {
+        flexDirection: 'row',
+        marginTop: 15,
+        marginLeft: 20
+      },  
+
+      st_inputBackground: {
+        width: 220,
+        height: 49,
+        borderRadius: 10,
+        marginLeft: 30,
+        backgroundColor: '#FAFAFA',
+        overflow: 'hidden'
+      },
 
     st_btn: {
         width: 320,
