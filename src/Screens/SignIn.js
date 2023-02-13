@@ -167,7 +167,7 @@ const SignIn = ({ navigation }) => {
       height: 55,
       backgroundColor: '#FFE589',
       paddingTop: 15,
-      marginTop: 20,
+      marginTop: 15,
       borderRadius: 10
     },
 

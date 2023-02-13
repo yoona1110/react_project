@@ -38,7 +38,7 @@ const Setting = ({navigation}) => {
                             {marginTop: 35}]}>
                         <Text style={styles.st_inputFont}> 닉네임 </Text>
                         <View style={styles.st_inputBackground}>
-                            <Text style={styles.st_input}> </Text>
+                            <Text style={styles.st_input}> 카페인중독자 </Text>
                         </View>
                     </View>
   
@@ -46,7 +46,7 @@ const Setting = ({navigation}) => {
                         style={styles.st_inputTheme}>
                         <Text style={styles.st_inputFont}> 아이디 </Text>
                         <View style={styles.st_inputBackground}>
-                            <Text style={styles.st_input}> </Text>
+                            <Text style={styles.st_input}> qorhqvkd19 </Text>
                         </View>
                     </View>
   
@@ -76,7 +76,8 @@ const Setting = ({navigation}) => {
                 <View style={{marginTop: 30}}>
                     <TouchableOpacity
                         style={styles.st_btn}
-                        onPress={() => navigation.navigate('Login')}>
+                        onPress={() => 
+                            navigation.navigate('Login')}>
                             <Text style={styles.st_btnFont}> 로그아웃 </Text>
                     </TouchableOpacity>
                     
@@ -192,7 +193,7 @@ const styles = StyleSheet.create({
     st_btn_profile: {
         fontSize: 18,
         color: '#575757',
-        marginTop: 10
+        marginTop: 12
     },
 
     st_input: {
