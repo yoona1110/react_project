@@ -6,12 +6,13 @@ import Login from "./src/Screens/Login";
 import SignIn from "./src/Screens/SignIn";
 import Main from "./src/Screens/Main";
 import Bookmark from "./src/Screens/Bookmark";
-import Setting from "./src/Screens/Setting";
 import Notification from './src/Screens/Notification';
+import Setting from "./src/Screens/Setting";
+
+import Setting_ModifyMember from './src/Screens/Setting_ModifyMember';
 
 import BulletinBoard_Main from './src/Screens/BulletinBoard_Main';
 import BulletinBoard_Hot from './src/Screens/BulletinBoard_Hot';
-
 import BulletinBoard_Write from './src/Screens/BulletinBoard_Write';
 
 const Stack = createNativeStackNavigator();
@@ -40,6 +41,9 @@ export default function App() {
         <Stack.Screen 
           name="BulletinBoard_Write" 
           component={BulletinBoard_Write}/>
+        <Stack.Screen
+          name="Setting_ModifyMember"
+          component={Setting_ModifyMember}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

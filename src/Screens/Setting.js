@@ -24,7 +24,8 @@ const Setting = ({navigation}) => {
                         </TouchableOpacity>
 
                         <TouchableOpacity 
-                            style={styles.st_btn_profileTheme}>
+                            style={styles.st_btn_profileTheme}
+                            onPress={() => navigation.navigate('Setting_ModifyMember')}>
                             <Text style={styles.st_btn_profile}> 회원정보 수정 </Text>
                         </TouchableOpacity>
                     </View>
@@ -73,7 +74,7 @@ const Setting = ({navigation}) => {
                 </View>
 
                 {/* 로그아웃, 회원탈퇴 부분 */}
-                <View style={{marginTop: 30}}>
+                <View style={{marginTop: 35}}>
                     <TouchableOpacity
                         style={styles.st_btn}
                         onPress={() => 
