@@ -11,7 +11,8 @@ const Main = ({ navigation }) => {
         <View style={styles.main_titleTheme}>
           <Text style={styles.main_title}> 후평동 </Text>
   
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Notification')}>
             <Image 
               style={styles.main_notificationImg}
               source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_notification.png')} />

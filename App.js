@@ -7,6 +7,7 @@ import SignIn from "./src/Screens/SignIn";
 import Main from "./src/Screens/Main";
 import Bookmark from "./src/Screens/Bookmark";
 import Setting from "./src/Screens/Setting";
+import Notification from './src/Screens/Notification';
 
 import BulletinBoard_Main from './src/Screens/BulletinBoard_Main';
 import BulletinBoard_Hot from './src/Screens/BulletinBoard_Hot';
@@ -28,10 +29,17 @@ export default function App() {
         <Stack.Screen name="Main" component={Main}/>
         <Stack.Screen name="Bookmark" component={Bookmark}/>
         <Stack.Screen name="Setting" component={Setting}/>
+        <Stack.Screen name="Notification" component={Notification}/>
 
-        <Stack.Screen name="BulletinBoard_Main" component={BulletinBoard_Main}/>
-        <Stack.Screen name="BulletinBoard_Hot" component={BulletinBoard_Hot}/>
-        <Stack.Screen name="BulletinBoard_Write" component={BulletinBoard_Write}/>
+        <Stack.Screen 
+          name="BulletinBoard_Main" 
+          component={BulletinBoard_Main}/>
+        <Stack.Screen 
+          name="BulletinBoard_Hot" 
+          component={BulletinBoard_Hot}/>
+        <Stack.Screen 
+          name="BulletinBoard_Write" 
+          component={BulletinBoard_Write}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
