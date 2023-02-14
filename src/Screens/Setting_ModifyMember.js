@@ -1,12 +1,18 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Dimensions, TextInput, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Dimensions, TextInput, StyleSheet, Text, Image, TouchableOpacity, View } from 'react-native';
 
 const Setting_ModifyMember = ({navigation}) => {
     return (
         <View style={styles.container}>
             {/* 상단부 */}
             <View style={styles.mm_titleTheme}>
+                <TouchableOpacity 
+                    onPress={() => navigation.navigate('Setting')}>
+                    <Image 
+                        style={styles.mm_btn_back}
+                        source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_back.png')} />
+                </TouchableOpacity>
                 <Text style={styles.mm_title}> 회원 정보 수정 </Text>
             </View>
 
@@ -65,17 +71,11 @@ const Setting_ModifyMember = ({navigation}) => {
             </View>
 
             {/* 하단부 */}
-            <View style={{flex: 1.7}}>
+            <View style={styles.container}>
                 <TouchableOpacity
                     style={styles.mm_btn}
                     onPress={() => navigation.navigate('Setting')}>
                     <Text style={styles.mm_btnFont}> 확인 </Text>
-                </TouchableOpacity>
-                    
-                <TouchableOpacity
-                    style={styles.mm_btn}
-                    onPress={() => navigation.navigate('Setting')}>
-                    <Text style={styles.mm_btnFont}> 취소 </Text>
                 </TouchableOpacity> 
             </View>
             <StatusBar style='auto'/>
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#575757',
         marginTop: 33,
-        marginLeft: 132
+        marginLeft: 93
     },
 
     mm_titleTheme: {
@@ -107,8 +107,15 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
 
+    mm_btn_back: {
+        width: 28,
+        height: 28,
+        marginTop: 33,
+        marginLeft: 10
+    }, 
+
     mm_information: {
-        flex: 5.8,
+        flex: 6.5,
     },
 
     mm_Input: {
