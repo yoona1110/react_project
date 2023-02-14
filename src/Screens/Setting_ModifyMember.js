@@ -1,6 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Platform, Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Dimensions, TextInput, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const Setting_ModifyMember = ({navigation}) => {
     return (
@@ -11,8 +11,57 @@ const Setting_ModifyMember = ({navigation}) => {
             </View>
 
             {/* 회원 정보 부분*/}
-            <View style={{flex: 5.8}}>
-                
+            <View style={styles.mm_information}>
+                <View 
+                    style={[styles.mm_InputTheme, 
+                        {marginTop: 70}]}>
+                    <Text style={styles.mm_InputFont}> 닉네임 </Text>
+                    <TextInput 
+                        style={styles.mm_Input}> 기존 닉네임 </TextInput>
+                </View>
+    
+                <View 
+                    style={styles.mm_InputTheme}>
+                    <Text style={styles.mm_InputFont}> 아이디 </Text>
+                    <TextInput 
+                        style={styles.mm_Input}> 기존 아이디 </TextInput>
+                </View>
+    
+                <View 
+                    style={[styles.mm_InputTheme, 
+                        {marginLeft: 15}]}>
+                    <Text style={styles.mm_InputFont}> 비밀번호 </Text>
+                    <TextInput 
+                        style={[
+                            styles.mm_Input, 
+                            {marginLeft: 30}]}
+                        secureTextEntry='false'> 기존 비밀번호 </TextInput>
+                </View>
+    
+                <View 
+                    style={[styles.mm_InputTheme, 
+                        {marginLeft: 0}]}>
+                    <Text style={styles.mm_InputFont}> 비밀번호 확인 </Text>
+                    <TextInput 
+                        style={[
+                            styles.mm_Input, 
+                            {marginLeft: 15}]}
+                        secureTextEntry='true'/>
+                </View>
+    
+                <View 
+                    style={styles.mm_InputTheme}>
+                    <Text style={styles.mm_InputFont}> 이메일 </Text>
+                    <TextInput 
+                        style={styles.mm_Input}> 기존 이메일 </TextInput>
+                </View>
+  
+                <View 
+                    style={styles.mm_InputTheme}>
+                    <Text style={styles.mm_InputFont}> 주소지 </Text>
+                    <TextInput 
+                        style={styles.mm_Input}> 기존 주소지 </TextInput>
+                </View>
             </View>
 
             {/* 하단부 */}
@@ -56,6 +105,32 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFEDAB',
         alignItems: 'center',
         flexDirection: 'row'
+    },
+
+    mm_information: {
+        flex: 5.8,
+    },
+
+    mm_Input: {
+        width: 225,
+        height: 49,
+        fontSize: 17,
+        paddingLeft: 15,
+        borderRadius: 10,
+        marginLeft: 40,
+        backgroundColor: '#FAFAFA'
+    },
+  
+    mm_InputFont: {
+        fontSize: 20,
+        color: '#575757',
+        marginTop: 13
+    },
+  
+    mm_InputTheme: {
+        flexDirection: 'row',
+        marginTop: 25,
+        marginLeft: 20
     },
 
     mm_btn: {
