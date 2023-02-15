@@ -2,7 +2,7 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { TouchableOpacity, Dimensions, StyleSheet, Image, Text, View } from 'react-native';
 
-const BulletinBoard_Main = ({navigation}) => {
+export default function BulletinBoard_Main({navigation}) {
     return (
         <View style={styles.container}>
             {/* 상단부 */}
@@ -92,5 +92,3 @@ const styles = StyleSheet.create({
         marginTop: 22
     }
 });
-
-export default BulletinBoard_Main;

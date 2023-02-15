@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { KeyboardAvoidingView, Dimensions, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 // 회원가입 페이지
-const SignIn = ({ navigation }) => {
+export default function SignIn({ navigation }) {
     return (
       <View 
         style={[styles.container,
@@ -178,6 +178,4 @@ const SignIn = ({ navigation }) => {
       color: '#575757'
     }
   });
-
-  export default SignIn;
   

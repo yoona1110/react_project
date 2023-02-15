@@ -2,7 +2,7 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Dimensions, TouchableOpacity, StyleSheet, View, Text, Image, TextInput, KeyboardAvoidingView } from 'react-native';
 
-const BulletinBoard_Write = ({navigation}) => {
+export default function BulletinBoard_Write({navigation}) {
     return(
         <View style={styles.container}>
                 
@@ -113,5 +113,4 @@ const styles = StyleSheet.create({
         marginTop: 53,
         marginLeft: 285
     }
-})
-export default BulletinBoard_Write;
+});

@@ -2,7 +2,7 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { TouchableOpacity, Dimensions, StyleSheet, Image, Text, View } from 'react-native';
 
-const Notification = ({navigation}) => {
+export default function Notification({navigation}) {
     return (
         <View style={styles.container}>
             {/* 상단부 */}
@@ -55,6 +55,4 @@ const styles = StyleSheet.create({
         marginTop: 33,
         marginLeft: 10
     }
-})
-
-export default Notification;
+});

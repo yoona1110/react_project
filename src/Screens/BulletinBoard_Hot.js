@@ -2,7 +2,7 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { TouchableOpacity, Dimensions, StyleSheet, Text, Image, View } from 'react-native';
 
-const BulletinBoard_Hot = ({navigation}) => {
+export default function BulletinBoard_Hot({navigation}) {
     return (
         <View style={styles.container}>
             {/* 상단부 */}
@@ -64,5 +64,3 @@ const styles = StyleSheet.create({
     }
 
 });
-
-export default BulletinBoard_Hot;

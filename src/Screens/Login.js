@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 // 로그인 페이지
-const Login = ({ navigation }) => {
+export default function Login({ navigation }) {
     return (
       <View 
         style={[styles.container,
@@ -100,5 +100,3 @@ const Login = ({ navigation }) => {
       color: '#575757'
     }
   });
-
-  export default Login;

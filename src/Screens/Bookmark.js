@@ -1,8 +1,8 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { TouchableOpacity, Dimensions, StyleSheet, Image, Text, View } from 'react-native';
+import { TouchableOpacity, Dimensions, StyleSheet, Image, Text, View, ScrollView } from 'react-native';
 
-const Bookmark = ({navigation}) => {
+export default function Bookmark({navigation}) {
     return (
         <View style={styles.container}>
             {/* 상딘부 */}
@@ -10,17 +10,19 @@ const Bookmark = ({navigation}) => {
                 <Text style={styles.bm_title}> 게시판 </Text>
             </View>
 
-            {/* 가운데 개사펀 목록부분 */}
+            {/* 가운데 게시판 목록부분 */}
             <View style={styles.bm_page}>
                 <Text style={styles.bm_page_title}> 즐겨찾는 게시판 </Text>
                 <View style={styles.bm_page_theme}></View>
 
-                <Text style={[
-                    styles.bm_page_title, 
-                    {marginRight: 240}]}> 전체 게시판 </Text>
-                <View style={[
-                    styles.bm_page_theme, 
-                    {height: 400}]}></View>
+                <Text 
+                    style={[styles.bm_page_title, 
+                        {marginRight: 240}]}> 전체 게시판 </Text>
+                <ScrollView 
+                    contentContainerStyle={[styles.bm_page_theme, 
+                        {height: 400,
+                        justifyContent: 'space-between'}]}>
+                </ScrollView>
             </View>
 
             {/* 하단부 */}
@@ -133,5 +135,3 @@ const styles = StyleSheet.create({
         marginLeft: 45
       }
 });
-
-export default Bookmark;

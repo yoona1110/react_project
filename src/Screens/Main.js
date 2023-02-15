@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { Platform, Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 // 메인 페이지
-const Main = ({ navigation }) => {
+export default function Main({ navigation }) {
     return (
       <View style={styles.container}>
   
@@ -193,5 +193,3 @@ const Main = ({ navigation }) => {
       marginLeft: 45
     }
   });
-
-  export default Main;

@@ -2,7 +2,7 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Dimensions, TextInput, StyleSheet, Text, Image, TouchableOpacity, View } from 'react-native';
 
-const Setting_ModifyMember = ({navigation}) => {
+export default function Setting_ModifyMember({navigation}) {
     return (
         <View style={styles.container}>
             {/* 상단부 */}
@@ -155,6 +155,4 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#575757'
       },
-})
-
-export default Setting_ModifyMember;
+});
