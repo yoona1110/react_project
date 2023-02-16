@@ -6,9 +6,7 @@ import { KeyboardAvoidingView, Dimensions, Image, StyleSheet, Text, TextInput, T
 export default function SignIn({ navigation }) {
     return (
       <View 
-        style={[styles.container,
-          {alignItems: 'center',
-           backgroundColor: '#FFFFFF'}]}>
+        style={styles.container}>
   
         {/* 상단부 타이틀 */}
         <View style={styles.signin_TitleTheme}>
@@ -18,8 +16,7 @@ export default function SignIn({ navigation }) {
         {/* 사진 표시창, 선택 버튼 */}
         <View  
           style={[styles.container, 
-              {flex: 6.5,
-               alignItems: 'center'}]}>
+              {flex: 6.5}]}>
           <Image 
             style={styles.signin_Profile} />
           <TouchableOpacity 
@@ -32,17 +29,15 @@ export default function SignIn({ navigation }) {
           <KeyboardAvoidingView behavior='padding'>
             <View 
               style={[styles.signin_InputTheme, 
-                {marginTop: 35,
-                 marginLeft: 20}]}>
+                {marginTop: 35}]}>
               <Text style={styles.signin_InputFont}> 닉네임 </Text>
-              <TextInput style={[styles.signin_Input, {marginLeft: 40}]}/>
+              <TextInput style={styles.signin_Input}/>
             </View>
   
             <View 
-              style={[styles.signin_InputTheme,
-                {marginLeft: 20}]}>
+              style={styles.signin_InputTheme}>
               <Text style={styles.signin_InputFont}> 아이디 </Text>
-              <TextInput style={[styles.signin_Input, {marginLeft: 40}]}/>
+              <TextInput style={styles.signin_Input}/>
             </View>
   
             <View 
@@ -66,17 +61,15 @@ export default function SignIn({ navigation }) {
             </View>
   
             <View 
-              style={[styles.signin_InputTheme,
-                {marginLeft: 20}]}>
+              style={styles.signin_InputTheme}>
               <Text style={styles.signin_InputFont}> 이메일 </Text>
-              <TextInput style={[styles.signin_Input, {marginLeft: 40}]}/>
+              <TextInput style={styles.signin_Input}/>
             </View>
   
             <View 
-              style={[styles.signin_InputTheme,
-                {marginLeft: 20}]}>
+              style={styles.signin_InputTheme}>
               <Text style={styles.signin_InputFont}> 주소지 </Text>
-              <TextInput style={[styles.signin_Input, {marginLeft: 40}]}/>
+              <TextInput style={styles.signin_Input}/>
             </View>
           </KeyboardAvoidingView>
         </View>
@@ -100,6 +93,8 @@ export default function SignIn({ navigation }) {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
+      alignItems: 'center',
+      backgroundColor: '#FFFFFF'
     },
   
     /* 회원가입 페이지 */
@@ -147,7 +142,7 @@ export default function SignIn({ navigation }) {
       fontSize: 17,
       paddingLeft: 15,
       borderRadius: 10,
-      marginLeft: 25,
+      marginLeft: 40,
       backgroundColor: '#FAFAFA'
     },
 
@@ -159,7 +154,8 @@ export default function SignIn({ navigation }) {
 
     signin_InputTheme: {
       flexDirection: 'row',
-      marginTop: 15
+      marginTop: 15,
+      marginLeft: 20
     },
 
     signin_Btn: {
