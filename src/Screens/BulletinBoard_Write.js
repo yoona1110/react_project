@@ -1,6 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Dimensions, TouchableOpacity, StyleSheet, View, Text, Image, TextInput, KeyboardAvoidingView } from 'react-native';
+import { Dimensions, TouchableOpacity, StyleSheet, View, Text, Image, TextInput } from 'react-native';
 
 export default function BulletinBoard_Write({navigation}) {
     return(
