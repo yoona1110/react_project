@@ -30,7 +30,6 @@ export default function Login({ navigation }) {
         </View>
   
         {/* 로그인, 회원가입 버튼 */}
-        {/* 특정 영역을 지정하여 터치 이벤트를 사용할 수 있음 */}
         <TouchableOpacity 
           style={styles.login_Btn}
           onPress={() => navigation.navigate('SignIn')}>
