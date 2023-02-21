@@ -14,13 +14,15 @@ export default function BulletinBoard_Main({navigation}) {
                         style={styles.bb_btn_back}
                         source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_back.png')} />
                 </TouchableOpacity>
-                <Text style={styles.bb_title}> 메인 게시판 </Text>
+                <Text 
+                style={styles.bb_title}> 메인 게시판 </Text>
 
             </View>
 
             {/* 게시글 부분 */}
             <View style={styles.bb_list}>
-                <Text style={{
+                <Text 
+                    style={{
                     marginTop: 320, 
                     marginLeft: 130}}> 작성된 게시글이 없습니다. </Text> 
                     
