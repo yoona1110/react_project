@@ -40,8 +40,7 @@ export default function Main({ navigation }) {
 
             {/* 즐겨찾기 */}
             <View style={styles.main_bulletinBoard}>
-              <Text style={[
-                styles.main_bb_title, 
+              <Text style={[styles.main_bb_title, 
                 {marginRight: 157}]}> 즐겨찾는 게시판 </Text>
 
               <TouchableOpacity

@@ -15,7 +15,8 @@ export default function BulletinBoard_Main({navigation}) {
                         source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_back.png')} />
                 </TouchableOpacity>
                 <Text 
-                style={styles.bb_title}> 메인 게시판 </Text>
+                    style={styles.bb_title}> 메인 게시판 
+                </Text>
 
             </View>
 
@@ -24,7 +25,8 @@ export default function BulletinBoard_Main({navigation}) {
                 <Text 
                     style={{
                     marginTop: 320, 
-                    marginLeft: 130}}> 작성된 게시글이 없습니다. </Text> 
+                    marginLeft: 130}}> 작성된 게시글이 없습니다. 
+                </Text> 
                     
                 <TouchableOpacity 
                     style={styles.bb_btn_add}
