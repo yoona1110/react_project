@@ -7,8 +7,7 @@ export default function BulletinBoard_Write({navigation}) {
         <View style={styles.container}>
                 
             {/* 상단부 */}
-            <View 
-                style={styles.write_title}>
+            <View style={styles.write_title}>
                 <TouchableOpacity
                     onPress={() => navigation.navigate('BulletinBoard_Main')}>
 
@@ -24,8 +23,7 @@ export default function BulletinBoard_Write({navigation}) {
             </View>
 
             {/* 게시글 작성 부분 */}
-            <View 
-                style={styles.write_body}>
+            <View style={styles.write_body}>
                 <TextInput 
                     style={styles.write_bodyTitle}
                     placeholder={'글 제목'} />
