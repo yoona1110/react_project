@@ -26,7 +26,7 @@ export default function BulletinBoard_Write({navigation}) {
             <View style={styles.write_body}>
                 <TextInput 
                     style={styles.write_bodyTitle}
-                    placeholder={'글 제목'} />
+                    placeholder={'제목을 입력하세요.'} />
 
                 <TextInput
                     style={styles.write_bodyContent}
