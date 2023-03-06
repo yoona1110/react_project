@@ -16,10 +16,10 @@ export default function BulletinBoard_Write({navigation}) {
                         source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_back.png')}/>
                 </TouchableOpacity>
 
-                <TouchableOpacity
+                <TouchableOpacity 
                     onPress={() => navigation.navigate('BulletinBoard_Main')}>
-                        <Text style={styles.write_btn_ok}> 완료 </Text>
-                    </TouchableOpacity>
+                    <Text style={styles.write_btn_ok}> 완료 </Text>
+                </TouchableOpacity>
             </View>
 
             {/* 게시글 작성 부분 */}

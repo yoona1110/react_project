@@ -7,9 +7,7 @@ export default function BulletinBoard_Main({navigation}) {
         <View style={styles.container}>
             {/* 상단부 */}
             <View style={styles.bb_titletheme}>
-                <TouchableOpacity 
-                    onPress={() => navigation.navigate('Main')}>
-                        
+                <TouchableOpacity onPress={() => navigation.navigate('Main')}>
                     <Image 
                         style={styles.bb_btn_back}
                         source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_back.png')} />
