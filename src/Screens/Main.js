@@ -11,8 +11,7 @@ export default function Main({ navigation }) {
         <View style={styles.main_titleTheme}>
           <Text style={styles.main_title}> 후평동 </Text>
   
-          <TouchableOpacity
-            onPress={() => navigation.navigate('Notification')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Notification')}>
             <Image 
               style={styles.main_notificationImg}
               source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_notification.png')} />
@@ -29,8 +28,7 @@ export default function Main({ navigation }) {
             <View style={styles.main_bulletinBoard}>
               <Text style={styles.main_bb_title}> 메인 게시판 </Text>
 
-              <TouchableOpacity
-                onPress={() => navigation.navigate('BulletinBoard_Main')}>
+              <TouchableOpacity onPress={() => navigation.navigate('BulletinBoard_Main')}>
 
                 <Text style={styles.main_bb_detail}> 더보기 </Text>
               </TouchableOpacity>
