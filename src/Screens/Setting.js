@@ -43,28 +43,23 @@ export default function Setting({navigation}) {
                         </View>
                     </View>
   
-                    <View 
-                        style={styles.st_inputTheme}>
+                    <View style={styles.st_inputTheme}>
                         <Text style={styles.st_inputFont}> 아이디 </Text>
                         <View style={styles.st_inputBackground}>
                             <Text style={styles.st_input}> qorhqvkd19 </Text>
                         </View>
                     </View>
   
-                    <View 
-                        style={styles.st_inputTheme}>
+                    <View style={styles.st_inputTheme}>
                         <Text style={styles.st_inputFont}> 이메일 </Text>
-                        <View 
-                            style={styles.st_inputBackground}>
+                        <View style={styles.st_inputBackground}>
                             <Text style={styles.st_input}> azi@naver.com </Text>
                         </View>
                     </View>
   
-                    <View 
-                        style={styles.st_inputTheme}>
+                    <View style={styles.st_inputTheme}>
                         <Text style={styles.st_inputFont}> 주소지 </Text>
-                        <View 
-                            style={styles.st_inputBackground}>
+                        <View style={styles.st_inputBackground}>
                             <Text 
                                 style={[
                                     styles.st_input, 
@@ -77,8 +72,7 @@ export default function Setting({navigation}) {
                 <View style={{marginTop: 35}}>
                     <TouchableOpacity
                         style={styles.st_btn}
-                        onPress={() => 
-                            navigation.navigate('Login')}>
+                        onPress={() => navigation.navigate('Login')}>
                             <Text style={styles.st_btnFont}> 로그아웃 </Text>
                     </TouchableOpacity>
                     

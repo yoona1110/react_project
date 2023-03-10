@@ -7,8 +7,7 @@ export default function Setting_ModifyMember({navigation}) {
         <View style={styles.container}>
             {/* 상단부 */}
             <View style={styles.mm_titleTheme}>
-                <TouchableOpacity 
-                    onPress={() => navigation.navigate('Setting')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Setting')}>
                     <Image 
                         style={styles.mm_btn_back}
                         source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_back.png')} />
@@ -19,22 +18,21 @@ export default function Setting_ModifyMember({navigation}) {
             {/* 회원 정보 부분*/}
             <View style={styles.mm_information}>
                 <View 
-                    style={[styles.mm_InputTheme, 
+                    style={[
+                        styles.mm_InputTheme, 
                         {marginTop: 70}]}>
                     <Text style={styles.mm_InputFont}> 닉네임 </Text>
-                    <TextInput 
-                        style={styles.mm_Input}> 기존 닉네임 </TextInput>
+                    <TextInput style={styles.mm_Input}> 기존 닉네임 </TextInput>
                 </View>
     
-                <View 
-                    style={styles.mm_InputTheme}>
+                <View style={styles.mm_InputTheme}>
                     <Text style={styles.mm_InputFont}> 아이디 </Text>
-                    <TextInput 
-                        style={styles.mm_Input}> 기존 아이디 </TextInput>
+                    <TextInput style={styles.mm_Input}> 기존 아이디 </TextInput>
                 </View>
     
                 <View 
-                    style={[styles.mm_InputTheme, 
+                    style={[
+                        styles.mm_InputTheme, 
                         {marginLeft: 15}]}>
                     <Text style={styles.mm_InputFont}> 비밀번호 </Text>
                     <TextInput 
@@ -45,7 +43,8 @@ export default function Setting_ModifyMember({navigation}) {
                 </View>
     
                 <View 
-                    style={[styles.mm_InputTheme, 
+                    style={[
+                        styles.mm_InputTheme, 
                         {marginLeft: 0}]}>
                     <Text style={styles.mm_InputFont}> 비밀번호 확인 </Text>
                     <TextInput 
@@ -55,18 +54,14 @@ export default function Setting_ModifyMember({navigation}) {
                         secureTextEntry='true'/>
                 </View>
     
-                <View 
-                    style={styles.mm_InputTheme}>
+                <View style={styles.mm_InputTheme}>
                     <Text style={styles.mm_InputFont}> 이메일 </Text>
-                    <TextInput 
-                        style={styles.mm_Input}> 기존 이메일 </TextInput>
+                    <TextInput style={styles.mm_Input}> 기존 이메일 </TextInput>
                 </View>
   
-                <View 
-                    style={styles.mm_InputTheme}>
+                <View style={styles.mm_InputTheme}>
                     <Text style={styles.mm_InputFont}> 주소지 </Text>
-                    <TextInput 
-                        style={styles.mm_Input}> 기존 주소지 </TextInput>
+                    <TextInput style={styles.mm_Input}> 기존 주소지 </TextInput>
                 </View>
             </View>
 
