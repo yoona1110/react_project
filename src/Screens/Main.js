@@ -27,9 +27,7 @@ export default function Main({ navigation }) {
             {/* 메인 게시판 */}
             <View style={styles.main_bulletinBoard}>
               <Text style={styles.main_bb_title}> 메인 게시판 </Text>
-
               <TouchableOpacity onPress={() => navigation.navigate('BulletinBoard_Main')}>
-
                 <Text style={styles.main_bb_detail}> 더보기 </Text>
               </TouchableOpacity>
             </View>
@@ -40,10 +38,7 @@ export default function Main({ navigation }) {
             <View style={styles.main_bulletinBoard}>
               <Text style={[styles.main_bb_title, 
                 {marginRight: 157}]}> 즐겨찾는 게시판 </Text>
-
-              <TouchableOpacity
-                onPress={() => navigation.navigate('Bookmark')}>
-
+              <TouchableOpacity onPress={() => navigation.navigate('Bookmark')}>
                 <Text style={styles.main_bb_detail}> 더보기 </Text>
               </TouchableOpacity>
             </View>
@@ -53,13 +48,10 @@ export default function Main({ navigation }) {
             {/* HOT 게시판 */}
             <View style={styles.main_bulletinBoard}>
               <Text style={styles.main_bb_title}> HOT 게시판 </Text>
-
-              <TouchableOpacity
-                onPress={() => navigation.navigate('BulletinBoard_Hot')}>
+              <TouchableOpacity onPress={() => navigation.navigate('BulletinBoard_Hot')}>
                 <Text style={styles.main_bb_detail}> 더보기 </Text>
               </TouchableOpacity>
             </View>
-
             <View style={styles.main_bb_theme}></View>
         </View>
   
@@ -81,12 +73,9 @@ export default function Main({ navigation }) {
             <Image
               style={styles.main_under_button}
               source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_home.png')} />
-  
           </TouchableOpacity>
   
-          <TouchableOpacity 
-            onPress={() => navigation.navigate('Bookmark')}>
-
+          <TouchableOpacity onPress={() => navigation.navigate('Bookmark')}>
             <Image
               style={[
                 styles.main_under_button,
@@ -95,15 +84,12 @@ export default function Main({ navigation }) {
   
           </TouchableOpacity>
   
-          <TouchableOpacity
-            onPress={() => navigation.navigate('Setting')}>
-
+          <TouchableOpacity onPress={() => navigation.navigate('Setting')}>
             <Image
               style={[
                 styles.main_under_button,
                 {marginLeft: 105}]}
               source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_user_info.png')} />
-  
           </TouchableOpacity>
         </View>
   

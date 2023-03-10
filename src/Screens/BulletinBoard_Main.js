@@ -13,7 +13,6 @@ export default function BulletinBoard_Main({navigation}) {
                         source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_back.png')} />
                 </TouchableOpacity>
                 <Text style={styles.bb_title}> 메인 게시판 </Text>
-
             </View>
 
             {/* 게시글 부분 */}
@@ -30,7 +29,6 @@ export default function BulletinBoard_Main({navigation}) {
                     <Image 
                         style={styles.bb_btnImg}
                         source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_plus.png')} />
-
                 </TouchableOpacity>
             </View>
             
