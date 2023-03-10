@@ -7,8 +7,7 @@ export default function Notification({navigation}) {
         <View style={styles.container}>
             {/* 상단부 */}
             <View style={styles.n_titleTheme}>
-                <TouchableOpacity 
-                    onPress={() => navigation.navigate('Main')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Main')}>
                     <Image 
                         style={styles.n_btn_back}
                         source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_back.png')} />

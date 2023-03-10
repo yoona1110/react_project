@@ -24,9 +24,10 @@ export default function Login({ navigation }) {
         <View style={styles.login_InputTheme}>
           <Text style={styles.login_InputTitle}> 비밀번호 </Text>
           <TextInput 
-            style={[styles.login_Input,
+            style={[
+              styles.login_Input,
               {marginLeft: 15}]}
-             secureTextEntry='true'/> 
+            secureTextEntry='true'/> 
         </View>
   
         {/* 로그인, 회원가입 버튼 */}
@@ -37,7 +38,8 @@ export default function Login({ navigation }) {
         </TouchableOpacity>
   
         <TouchableOpacity 
-          style={[styles.login_Btn, 
+          style={[
+            styles.login_Btn, 
             {marginTop: 15}]}
           onPress={() => navigation.navigate('Main')}>
           <Text style={styles.login_Btn_Font}> 로그인 </Text>

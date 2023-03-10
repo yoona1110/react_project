@@ -19,7 +19,8 @@ export default function Bookmark({navigation}) {
                     style={[styles.bm_page_title, 
                         {marginRight: 240}]}> 전체 게시판 </Text>
                 <ScrollView 
-                    contentContainerStyle={[styles.bm_page_theme, 
+                    contentContainerStyle={[
+                        styles.bm_page_theme, 
                         {height: 400,
                         justifyContent: 'space-between'}]}>
                 </ScrollView>
