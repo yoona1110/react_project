@@ -1,8 +1,25 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { TouchableOpacity, Dimensions, StyleSheet, Image, Text, View } from 'react-native';
+import * as ImagePicker from "expo-image-picker";
 
 export default function Setting({navigation}) {
+    const Image = ({ url, onChangePhoto }) => {
+        // btn 눌렀을 때 실행되는 함수
+        const photoBtn = async() => {
+            let result = await ImagePicker.launchImageLibraryAsync({
+                mediaTypes: ImagePicker.MediaTypeOptions.Images,
+                allowEditing: true,
+                aspect: [1, 1],
+                quality: 1
+            });
+            
+            if (!result.cancelled) {
+                onChangePhoto(result.url);
+            }
+        }
+    }
+    
     return (
         <View style={styles.container}>
             {/* 상단부 */}
@@ -14,12 +31,15 @@ export default function Setting({navigation}) {
             <View style={styles.st_center}>
                 {/* 프로필 설정 부분 */}
                 <View style={styles.st_profile_theme}>
-                    <Image style={styles.st_profile}/>
+                    <Image 
+                        style={styles.st_profile}
+                        source={{uri: url}}/>
                     <View>
                         <TouchableOpacity 
                             style={[
                                 styles.st_btn_profileTheme, 
-                                {marginTop: 0}]}>
+                                {marginTop: 0}]}
+                            onPress={() => {photoBtn}}>
                             <Text style={styles.st_btn_profile}> 이미지 수정 </Text>
                         </TouchableOpacity>
 
@@ -230,7 +250,7 @@ const styles = StyleSheet.create({
     
     st_btnFont: {
         textAlign: 'center',
-        fontSize: 24,
+        fontSize: 22,
         fontWeight: 'bold',
         color: '#575757'
       },

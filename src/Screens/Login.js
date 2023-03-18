@@ -96,7 +96,7 @@ export default function Login({ navigation }) {
   
     login_Btn_Font: {
       textAlign: 'center',
-      fontSize: 24,
+      fontSize: 22,
       fontWeight: 'bold',
       color: '#575757'
     }

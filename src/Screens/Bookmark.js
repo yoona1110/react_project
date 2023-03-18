@@ -43,7 +43,7 @@ export default function Bookmark({navigation}) {
                     }
                 })]}>
   
-                {/* <TouchableOpacity
+                <TouchableOpacity
                     onPress={() => navigation.navigate('Main')}>
                     <Image
                         style={styles.bm_under_button}
@@ -57,7 +57,7 @@ export default function Bookmark({navigation}) {
                         styles.bm_under_button,
                         {marginLeft: 105}]}
                     source={require('/Users/heoyoona/Desktop/PROJECT/RN_Project/react_native_app/assets/image/main_list.png')} />
-                </TouchableOpacity> */}
+                </TouchableOpacity>
   
                 <TouchableOpacity
                     onPress={() => navigation.navigate('Setting')}>
