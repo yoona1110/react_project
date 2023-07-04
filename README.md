@@ -1,2 +1,2 @@
-# react_native_app  
-📅 2022.11.20 ~ 2023.  
+# react_project
+📅 2023.07.09 ~
