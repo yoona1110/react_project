@@ -1,2 +1,2 @@
-# react_project
+# react_project
 📅 2023.07.09 ~
