@@ -1,3 +1,3 @@
 # react_project
-### Todomate clonecoding   
+### Todomate Clonecoding   
 📅 2023.07.09 ~
