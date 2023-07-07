@@ -4,7 +4,8 @@ import styled from 'styled-components';
 
 const Wrapper = styled.section`
     text-align: center;
-    padding: 10rem;
+    margin-top: 10rem;
+    margin-bottom: 1rem;
 `;
 
 const Img = styled.img`
@@ -13,14 +14,18 @@ const Img = styled.img`
 `;
 
 const Title = styled.h1`
-    font-size: 3rem;
+    font-size: 2.8rem;
 `;
 
 const SubTitle = styled.p `
     font-size: 1rem;
     margin-top: -2.6rem;
-    margin-bottom: 11.5rem;
+    margin-bottom: 14rem;
     color: #787878;
+`;
+
+const BtnWrapper = styled.p `
+    text-align: center;
 `;
 
 const Button = styled.button`
@@ -29,9 +34,9 @@ const Button = styled.button`
     font-size: 0.9rem;
     background-color: #F5F5F5;
     border: none;
-    margin-top: 10px;
     border-radius: 0.5rem;
-    text-align: center;
+    margin-top: -0.5rem;
+    cursor: pointer;
 `;
 
 const Home = () => {
@@ -50,7 +55,9 @@ const Home = () => {
             <Img src={image} alt=''/>
             <Title> todomate </Title>
             <SubTitle> 할 일을 작성, 계획, 관리하세요. </SubTitle>
-            <Button onClick={goSignIn}> 로그인 </Button>
+            <BtnWrapper>
+                <Button onClick={goSignIn}> 로그인 </Button>
+            </BtnWrapper>
             <Button onClick={goSignUp}> 회원가입 </Button>
         </Wrapper>
     );
