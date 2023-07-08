@@ -6,10 +6,10 @@ import back from '../images/back.png';
 
 const Wrapper = styled.section`
     text-align: center;
-    margin-top: -24.5rem;
+    margin-top: -22rem;
 `;
 
-const IBWrapper = styled.section`
+const SubWrapper = styled.section`
     text-align: center;
 `;
 
@@ -36,7 +36,7 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-    width: 37rem;
+    width: 36.5rem;
     height: 3rem;
     color: #BEBEBE;
     background-color: #E7E7E7;
@@ -52,16 +52,31 @@ const SignUp = () => {
     const [password, setPassword] = useState("");
     const [pwCheck, setPwCheck] = useState("");
 
+    const onChangeEmail = (e) => {
+        const emailCurrent = e.target.value;
+        setEmail(emailCurrent);
+    }
+
+    const onChangePw = (e) => {
+        const PwCurrent = e.target.value;
+        setPassword(PwCurrent);
+    }
+
+    const onChangePwCheck = (e) => {
+        const PwCheckCurrent = e.target.value;
+        setPwCheck(PwCheckCurrent);
+    }
+
     const movePage = useNavigate();
 
     function Register() {
-        toast('회원가입에 성공하였습니다.', {
+        movePage('../SignIn');
+        toast('회원가입에 성공하였습니다', {
             position: 'bottom-center',
             closeButton: false,
             autoClose: 1000,
             hideProgressBar: true
         });
-        movePage('../SignIn');
     }
 
     function Back() {
@@ -71,17 +86,29 @@ const SignUp = () => {
     return (
         <Wrapper>
             <BackImg src={back} onClick={Back}/>
-            <Title> 로그인 </Title>
-            <IBWrapper>
-                <Input type='email' placeholder='이메일' />
-            </IBWrapper>
-            <IBWrapper>
-                <Input type='password' placeholder='비밀번호' />
-            </IBWrapper>
-            <Input type='password' placeholder='비밀번호 확인' />
-            <IBWrapper>
+            <Title> 회원가입 </Title>
+            <SubWrapper>
+                <Input 
+                    type='email' 
+                    placeholder='이메일' 
+                    onChange={onChangeEmail}
+                />
+            </SubWrapper>
+            <SubWrapper>
+                <Input 
+                    type='password' 
+                    placeholder='비밀번호'
+                    onChange={onChangePw} 
+                />
+            </SubWrapper>
+            <Input 
+                type='password' 
+                placeholder='비밀번호 확인'
+                onChange={onChangePwCheck} 
+            />
+            <SubWrapper>
                 <Button onClick={Register}> 확인 </Button>
-            </IBWrapper>
+            </SubWrapper>
         </Wrapper>    
     )
 }

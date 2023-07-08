@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const Wrapper = styled.section`
     text-align: center;
-    margin-top: 10rem;
+    margin-top: 7rem;
     margin-bottom: 1rem;
 `;
 

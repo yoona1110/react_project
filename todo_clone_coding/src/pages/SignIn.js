@@ -6,10 +6,10 @@ import back from '../images/back.png';
 
 const Wrapper = styled.section`
     text-align: center;
-    margin-top: -24.5rem;
+    margin-top: -22rem;
 `;
 
-const IBWrapper = styled.section`
+const SubWrapper = styled.section`
     text-align: center;
 `;
 
@@ -36,7 +36,7 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-    width: 37rem;
+    width: 36.5rem;
     height: 3rem;
     color: #BEBEBE;
     background-color: #E7E7E7;
@@ -54,13 +54,13 @@ const SignIn = () => {
     const movePage = useNavigate();
 
     function Login() {
-        toast('로그인에 성공하였습니다.', {
+        movePage('../Main');
+        toast('로그인에 성공하였습니다', {
             position: 'bottom-center',
             closeButton: false,
             autoClose: 1000,
             hideProgressBar: true
         });
-        movePage('./Main');
     }
 
     function Back() {
@@ -71,13 +71,13 @@ const SignIn = () => {
         <Wrapper>
             <BackImg src={back} onClick={Back}/>
             <Title> 로그인 </Title>
-            <IBWrapper>
+            <SubWrapper>
                 <Input type='email' placeholder='이메일' />
-            </IBWrapper>
+            </SubWrapper>
             <Input type='password' placeholder='비밀번호' />
-            <IBWrapper>
+            <SubWrapper>
                 <Button onClick={Login}> 확인 </Button>
-            </IBWrapper>
+            </SubWrapper>
         </Wrapper>    
     )
 }

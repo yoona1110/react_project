@@ -2,10 +2,10 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import {GlobalStyle} from './styles/GlobalStyle';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Start from './components/Start';
-import SignIn from './components/SignIn';
-import SignUp from './components/SignUp';
-import Main from './components/Main';
+import Start from './pages/Start';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
+import Main from './pages/Main';
 
 const App = () => {
   return (
@@ -19,7 +19,6 @@ const App = () => {
           textAlign: 'center'
         }}
         limit={1}
-        
       />
         <Routes>
           <Route path='/' element={<Start/>}></Route>
