@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import PrimaryButton from '../components/PrimaryButton';
 import styled from 'styled-components';
 import back from '../images/back.png';
 
 const Wrapper = styled.section`
     text-align: center;
-    margin-top: -22rem;
+    margin-top: 2rem;
 `;
 
 const SubWrapper = styled.section`
@@ -15,7 +16,7 @@ const SubWrapper = styled.section`
 
 const Title = styled.h2`
     font-size: 1.2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.6rem;
 `;
 
 const BackImg = styled.img`
@@ -33,18 +34,6 @@ const Input = styled.input`
     border: none;
     border-bottom: 1px solid #E7E7E7;
     padding-left: 1rem;
-`;
-
-const Button = styled.button`
-    width: 36.5rem;
-    height: 3rem;
-    color: #BEBEBE;
-    background-color: #E7E7E7;
-    font-size: 0.9rem;
-    border: none;
-    border-radius: 0.5rem;
-    margin-top: 0.5rem;
-    cursor: pointer;
 `;
 
 const SignUp = () => {
@@ -107,7 +96,11 @@ const SignUp = () => {
                 onChange={onChangePwCheck} 
             />
             <SubWrapper>
-                <Button onClick={Register}> 확인 </Button>
+                <PrimaryButton 
+                    btnName={"확인"}
+                    onClick={Register}
+                    style={{ marginTop: '10px'}}>
+                </PrimaryButton>
             </SubWrapper>
         </Wrapper>    
     )

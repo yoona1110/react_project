@@ -3,10 +3,12 @@ import menu from '../images/menubar.png';
 
 const Wrapper = styled.div`
     text-align: center;
+    margin-top: 3rem;
 `;
 
 const Title = styled.h2`
     font-size: 1.5rem;
+    float: left;
 `; 
 
 const Menu = styled.img`

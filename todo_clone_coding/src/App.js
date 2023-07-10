@@ -1,5 +1,5 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import {GlobalStyle} from './styles/GlobalStyle';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { GlobalStyle } from './styles/GlobalStyle';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Start from './pages/Start';
@@ -15,8 +15,9 @@ const App = () => {
       <ToastContainer 
         toastStyle={{
           backgroundColor: '#E7E7E7',
-          color: '#BEBEBE',
-          textAlign: 'center'
+          color: '#929292',
+          textAlign: 'center',
+          borderRadius: '50px'
         }}
         limit={1}
       />

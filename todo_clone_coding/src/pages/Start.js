@@ -1,11 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 import image from '../images/start_image.png';
 import styled from 'styled-components';
+import PrimaryButton from '../components/PrimaryButton';
 
 const Wrapper = styled.section`
     text-align: center;
-    margin-top: 7rem;
-    margin-bottom: 1rem;
+    margin-top: 10rem;
 `;
 
 const Img = styled.img`
@@ -20,23 +20,12 @@ const Title = styled.h1`
 const SubTitle = styled.p `
     font-size: 1rem;
     margin-top: -2.6rem;
-    margin-bottom: 14rem;
+    margin-bottom: 15rem;
     color: #787878;
 `;
 
 const BtnWrapper = styled.p `
     text-align: center;
-`;
-
-const Button = styled.button`
-    width: 35rem;
-    height: 3rem;
-    font-size: 0.9rem;
-    background-color: #F5F5F5;
-    border: none;
-    border-radius: 0.5rem;
-    margin-top: -0.5rem;
-    cursor: pointer;
 `;
 
 const Home = () => {
@@ -56,9 +45,16 @@ const Home = () => {
             <Title> todomate </Title>
             <SubTitle> 할 일을 작성, 계획, 관리하세요. </SubTitle>
             <BtnWrapper>
-                <Button onClick={goSignIn}> 로그인 </Button>
+                <PrimaryButton 
+                    btnName={"로그인"}
+                    onClick={goSignIn}
+                    style={{ marginBottom: '-8px' }}>
+                </PrimaryButton>
             </BtnWrapper>
-            <Button onClick={goSignUp}> 회원가입 </Button>
+            <PrimaryButton 
+                btnName={"회원가입"}
+                onClick={goSignUp}>
+            </PrimaryButton>
         </Wrapper>
     );
 }
