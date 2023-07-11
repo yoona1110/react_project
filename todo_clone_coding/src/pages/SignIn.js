@@ -59,10 +59,7 @@ const SignIn = () => {
 
     return (
         <Wrapper>
-            <BackImg 
-                src={back} 
-                onClick={Back}
-            />
+            <BackImg src={back} onClick={Back} />
             <Title> 로그인 </Title>
             <SubWrapper>
                 <Input 

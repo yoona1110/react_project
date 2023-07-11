@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Footer from '../components/Footer';
 import menu from '../images/menubar.png';
 
 const Wrapper = styled.div`
@@ -25,6 +26,7 @@ const Main = () => {
         <Wrapper>
             <Title> todomate </Title>
             <Menu src={menu}/>
+            <Footer/>
         </Wrapper>        
     )
 }

@@ -34,6 +34,7 @@ const Input = styled.input`
     border: none;
     border-bottom: 1px solid #E7E7E7;
     padding-left: 1rem;
+    outline: none;
 `;
 
 const SignUp = () => {

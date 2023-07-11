@@ -2,10 +2,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { GlobalStyle } from './styles/GlobalStyle';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 import Start from './pages/Start';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Main from './pages/Main';
+import Notification from './pages/Notification';
+import UserInfo from './pages/UserInfo';
 
 const App = () => {
   return (
@@ -26,6 +29,8 @@ const App = () => {
           <Route path='/SignIn' element={<SignIn/>}></Route>
           <Route path='/SignUp' element={<SignUp/>}></Route>
           <Route path='/Main' element={<Main/>}></Route>
+          <Route path='/Notification' element={<Notification/>}></Route>
+          <Route path='/UserInfo' element={<UserInfo/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>
