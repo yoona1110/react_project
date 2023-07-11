@@ -59,18 +59,17 @@ const SignUp = () => {
 
     const movePage = useNavigate();
 
+    const Back = () => movePage('/');
+    const goSignIn = () => movePage('/SignIn');
+
     function Register() {
-        movePage('../SignIn');
+        goSignIn();
         toast('회원가입에 성공하였습니다', {
             position: 'bottom-center',
             closeButton: false,
             autoClose: 1000,
             hideProgressBar: true
         });
-    }
-
-    function Back() {
-        movePage('../');
     }
 
     return (

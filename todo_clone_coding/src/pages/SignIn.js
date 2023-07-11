@@ -43,18 +43,17 @@ const SignIn = () => {
 
     const movePage = useNavigate();
 
+    const Back = () => movePage('/');
+    const goMain = () => movePage('/Main');
+
     function Login() {
-        movePage('../Main');
+        goMain();
         toast('로그인에 성공하였습니다', {
             position: 'bottom-center',
             closeButton: false,
             autoClose: 1000,
             hideProgressBar: true
         });
-    }
-
-    function Back() {
-        movePage('../');
     }
 
     return (

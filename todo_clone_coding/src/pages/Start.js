@@ -31,13 +31,8 @@ const BtnWrapper = styled.p `
 const Home = () => {
     const movePage = useNavigate();
 
-    function goSignIn() {
-        movePage('./SignIn');
-    }
-
-    function goSignUp() {
-        movePage('./SignUp');
-    }
+    const goSignIn = () => movePage('./SignIn');
+    const goSignUp = () => movePage('./SignUp');
 
     return (
         <Wrapper className=''>
