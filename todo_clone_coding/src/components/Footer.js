@@ -1,20 +1,20 @@
-import { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { RiHome6Fill, RiNotification4Fill } from 'react-icons/ri';
 import { FaUser } from 'react-icons/fa';
 
 const Wrapper = styled.section`
-        width: 100%;
-        height: 4.5rem;
-        left: 0;
-        bottom: 0;
-        text-align: center;
-        justify-content: center;
-        display: flex;
-        position: absolute;
-        box-shadow: 10px 10px 20px 15px #EFEDED;
-`
+    width: 100%;
+    height: 4.5rem;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    box-shadow: 10px 10px 20px 15px #EFEDED;
+`;
 
 const SubWrapper = styled.section`
     height: auto;
@@ -29,48 +29,64 @@ const IconsTitle = styled.section`
     margin-top: -1px;
 `;
 
-export default function Footer() {
+const Main = styled(RiHome6Fill)`
+    margin-top: 11px;
+    background: linear-gradient(to right, #4880EC, #019CAD);
+`;
+
+const Notification = styled(RiNotification4Fill)`
+    margin-top: 12px;
+`;
+
+const UserInfo = styled(FaUser)`
+    margin-top: 14px;
+`;
+
+const Footer = () => {
     const [clicked, setClicked] = useState("Main");
+    const [color, setColor] = useState("#929292");
+    const selected = useRef();
     const movePage = useNavigate();
 
-    const MainIcons = document.querySelector('HomeIcons');
-    const MainTexts = document.querySelector('go');
-
-    const CheckIcons = (props) => {
+    const checkIcons = (props) => {
         setClicked(props);
         movePage(`../${props}`);
     };
-    
 
     return (
         <Wrapper>
-            <SubWrapper 
-                onClick={() => checkIcons("Main")}
-            >
-                <RiHome6Fill 
-                    size="34" 
-                    style={{ marginTop: '11px' }}
+            <SubWrapper onClick={() => checkIcons("Main")}>
+                <Main
+                    ref={selected}
+                    size="34"
+                    color={color}
                 /> 
-                <IconsTitle className='go'> 홈 </IconsTitle>
+                <IconsTitle color={color}> 홈 </IconsTitle>
             </SubWrapper>
-            <SubWrapper 
-                onClick={() => checkIcons("Notification")}
-            >
-                <RiNotification4Fill 
+
+            <SubWrapper onClick={() => checkIcons("Notification")}>
+                <Notification 
                     size="32" 
-                    style={{ marginTop: '12px' }}
+                    color={color}
+                    // style={{color: (clicked === "Notification") ? "#000000" : "#929292"}}
                 />
-                <IconsTitle> 알림 </IconsTitle>
+                <IconsTitle color={color}> 알림 </IconsTitle>
             </SubWrapper>
-            <SubWrapper 
-                onClick={() => checkIcons("UserInfo")}
-            >
-                <FaUser 
+
+            <SubWrapper onClick={() => checkIcons("UserInfo")}>
+                <UserInfo 
                     size="29" 
-                    style={{ marginTop: '14px' }}
+                    color={color}
                 />
-                <IconsTitle style={{marginTop: '1px'}}> MY </IconsTitle>
+                <IconsTitle 
+                    style={{marginTop: '1px'}}
+                    color={color}
+                > 
+                    MY 
+                </IconsTitle>
             </SubWrapper>
         </Wrapper>
     );
 }
+
+export default Footer;
