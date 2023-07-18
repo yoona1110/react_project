@@ -5,12 +5,12 @@ import PrimaryButton from '../components/PrimaryButton';
 
 const Wrapper = styled.section`
     text-align: center;
-    margin-top: 10rem;
 `;
 
 const Img = styled.img`
     width: 16rem;
     height: 12rem;
+    margin-top: 6rem;
 `;
 
 const Title = styled.h1`

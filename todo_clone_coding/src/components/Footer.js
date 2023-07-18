@@ -31,7 +31,7 @@ const IconsTitle = styled.section`
 
 const Main = styled(RiHome6Fill)`
     margin-top: 11px;
-    background: linear-gradient(to right, #4880EC, #019CAD);
+    /* background: linear-gradient(to right, #4880EC, #019CAD); */
 `;
 
 const Notification = styled(RiNotification4Fill)`
@@ -55,7 +55,9 @@ const Footer = () => {
 
     return (
         <Wrapper>
-            <SubWrapper onClick={() => checkIcons("Main")}>
+            <SubWrapper 
+                style={{marginLeft: '0rem'}}
+                onClick={() => checkIcons("Main")}>
                 <Main
                     ref={selected}
                     size="34"
