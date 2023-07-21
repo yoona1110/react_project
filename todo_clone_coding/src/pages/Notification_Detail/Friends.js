@@ -4,6 +4,7 @@ const Wrapper = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
+
     height: 35rem;
     font-size: 0.9rem;
     color: #929292;
