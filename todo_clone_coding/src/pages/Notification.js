@@ -35,14 +35,14 @@ const UserInfo = () => {
     const [isClick, setIsClick] = useState("friends");
     const movePage = useNavigate();
 
-    const onActive = (props) => setIsClick(props);
+    const onSelect = (props) => setIsClick(props);
 
     return (
         <Wrapper>
             <Title> 알림 </Title>
             <section style={{display: "flex"}}>
                 <OptionButton
-                    onClick={() => onActive("friends")}
+                    onClick={() => onSelect("friends")}
                     style={(isClick === "friends") ? {
                             color: "white",
                             backgroundColor: "black",
@@ -55,7 +55,7 @@ const UserInfo = () => {
                 > 친구의 할 일
                 </OptionButton>
                 <OptionButton
-                    onClick={() => onActive("like")}
+                    onClick={() => onSelect("like")}
                     style={(isClick === "like") ? {
                         color: "white",
                         backgroundColor: "black",
@@ -66,7 +66,7 @@ const UserInfo = () => {
                     }}> 받은 좋아요
                 </OptionButton>
                 <OptionButton
-                    onClick={() => onActive("news")}
+                    onClick={() => onSelect("news")}
                     style={(isClick === "news") ? {
                         color: "white",
                         backgroundColor: "black",

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.section`
@@ -10,8 +11,9 @@ const Wrapper = styled.section`
 `;
 
 const Like = () => {
+    const [list, setList] = useState("목록없음");
     return (
-        <Wrapper> 목록없음_좋아요 </Wrapper>
+        <Wrapper> {list} </Wrapper>
     )
 }
 

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.section`
@@ -11,8 +12,9 @@ const Wrapper = styled.section`
 `;
 
 const Friends = () => {
+    const [list, setList] = useState("목록없음");
     return (
-        <Wrapper> 목록없음_친구 할 일 </Wrapper>
+        <Wrapper> {list} </Wrapper>
     )
 }
 

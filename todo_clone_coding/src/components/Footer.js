@@ -59,7 +59,7 @@ const Footer = () => {
                 style={{marginLeft: '0rem'}}
                 onClick={() => checkIcons("Main")}>
                 <Main
-                    size="34"
+                    size="30"
                     color={color}
                 /> 
                 <IconsTitle color={color}> 홈 </IconsTitle>
@@ -67,7 +67,7 @@ const Footer = () => {
 
             <SubWrapper onClick={() => checkIcons("Notification")}>
                 <Notification 
-                    size="32" 
+                    size="28" 
                     color={color}
                 />
                 <IconsTitle color={color}> 알림 </IconsTitle>
@@ -75,7 +75,7 @@ const Footer = () => {
 
             <SubWrapper onClick={() => checkIcons("UserInfo")}>
                 <UserInfo 
-                    size="29" 
+                    size="25" 
                     color={color}
                 />
                 <IconsTitle 
