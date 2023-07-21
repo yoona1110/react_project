@@ -1,4 +1,3 @@
-import OptionButton from '../components/OptionButton';
 import Footer from "../components/Footer";
 import styled from 'styled-components';
 
@@ -16,8 +15,7 @@ const Title = styled.p`
 const UserInfo = () => {
     return (
         <Wrapper>
-            <Title> 알림 </Title>
-            <OptionButton> 친구의 할 일 </OptionButton>
+            <Title> 닉네임 </Title>
             <Footer/>
         </Wrapper>
     )

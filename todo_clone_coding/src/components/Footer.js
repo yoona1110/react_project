@@ -59,7 +59,6 @@ const Footer = () => {
                 style={{marginLeft: '0rem'}}
                 onClick={() => checkIcons("Main")}>
                 <Main
-                    ref={selected}
                     size="34"
                     color={color}
                 /> 
@@ -70,7 +69,6 @@ const Footer = () => {
                 <Notification 
                     size="32" 
                     color={color}
-                    // style={{color: (clicked === "Notification") ? "#000000" : "#929292"}}
                 />
                 <IconsTitle color={color}> 알림 </IconsTitle>
             </SubWrapper>

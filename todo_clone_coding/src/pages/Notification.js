@@ -1,10 +1,85 @@
-import Footer from "../components/Footer"
+import Footer from "../components/Footer";
+import styled from 'styled-components';
+import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
-export default function Notification() {
+import Friends from './Friends';
+import Like from "./Like";
+import News from './News';
+
+const Wrapper = styled.section`
+    text-align: center;
+    margin-top: 1.5rem;
+`;
+
+const Title = styled.p`
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+`;
+
+const OptionButton = styled.button`
+    width: auto;
+    height: 1.9rem;
+    font-size: 0.8rem;
+    border: none;
+    border-radius: 1rem;
+    padding: 0rem 0.9rem;
+    margin-top: 0.2rem;
+    margin-left: 0.7rem;
+    cursor: pointer;
+`;
+
+const UserInfo = () => {
+    const [isClick, setIsClick] = useState("friends");
+    const movePage = useNavigate();
+
+    const onActive = (props) => setIsClick(props);
+
     return (
-        <div> 
-            알림 페이지 
+        <Wrapper>
+            <Title> 알림 </Title>
+            <OptionButton
+                onClick={() => onActive("friends")}
+                style={(isClick === "friends") ? {
+                        color: "white",
+                        backgroundColor: "black",
+                        fontWeight: "bold"
+                        // marginRight: "14.4rem"
+                 } : {
+                        color: "black",
+                        backgroundColor: "#F5F5F5",
+                }}
+            > 친구의 할 일
+            </OptionButton>
+            <OptionButton
+                onClick={() => onActive("like")}
+                style={(isClick === "like") ? {
+                    color: "white",
+                    backgroundColor: "black",
+                    fontWeight: "bold"
+                } : {
+                    color: "black",
+                    backgroundColor: "#F5F5F5",
+                }}> 받은 좋아요
+            </OptionButton>
+            <OptionButton
+                onClick={() => onActive("news")}
+                style={(isClick === "news") ? {
+                    color: "white",
+                    backgroundColor: "black",
+                    fontWeight: "bold"
+                } : {
+                    color: "black",
+                    backgroundColor: "#F5F5F5",
+                }}> 소식
+            </OptionButton>
+            {(isClick === "friends") && <Friends/>}
+            {(isClick === "like") && <Like/>}
+            {(isClick === "news") && <News/>}
             <Footer/>
-        </div>
+        </Wrapper>
     )
 }
+
+export default UserInfo;
