@@ -9,6 +9,7 @@ import SignUp from './pages/SignUp';
 import Main from './pages/Main';
 import Notification from './pages/Notification';
 import UserInfo from './pages/UserInfo';
+import Setting from './pages/Setting';
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
           <Route path='/Main' element={<Main/>}></Route>
           <Route path='/Notification' element={<Notification/>}></Route>
           <Route path='/UserInfo' element={<UserInfo/>}></Route>
+          <Route path='/UserInfo/Setting' element={<Setting/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>

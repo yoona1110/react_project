@@ -1,7 +1,6 @@
 import Footer from "../components/Footer";
 import styled from 'styled-components';
 import { useState } from 'react';
-import { useNavigate } from "react-router-dom";
 
 import Friends from './Notification_Detail/Friends';
 import Like from "./Notification_Detail/Like";
@@ -33,9 +32,19 @@ const OptionButton = styled.button`
 
 const UserInfo = () => {
     const [isClick, setIsClick] = useState("friends");
-    const movePage = useNavigate();
 
     const onSelect = (props) => setIsClick(props);
+
+    const select = {
+        color: "white",
+        backgroundColor: "black",
+        fontWeight: "bold"
+    }
+
+    const notSelect = {
+        color: "black",
+        backgroundColor: "#F5F5F5"
+    }
 
     return (
         <Wrapper>
@@ -43,38 +52,24 @@ const UserInfo = () => {
             <section style={{display: "flex"}}>
                 <OptionButton
                     onClick={() => onSelect("friends")}
-                    style={(isClick === "friends") ? {
-                            color: "white",
-                            backgroundColor: "black",
-                            fontWeight: "bold"
-                            // marginRight: "14.4rem"
-                    } : {
-                            color: "black",
-                            backgroundColor: "#F5F5F5",
-                    }}
+                    style={(
+                        isClick === "friends") ? select : notSelect
+                    }
                 > 친구의 할 일
                 </OptionButton>
                 <OptionButton
                     onClick={() => onSelect("like")}
-                    style={(isClick === "like") ? {
-                        color: "white",
-                        backgroundColor: "black",
-                        fontWeight: "bold"
-                    } : {
-                        color: "black",
-                        backgroundColor: "#F5F5F5",
-                    }}> 받은 좋아요
+                    style={(
+                        isClick === "like") ? select : notSelect
+                    }
+                > 받은 좋아요
                 </OptionButton>
                 <OptionButton
                     onClick={() => onSelect("news")}
-                    style={(isClick === "news") ? {
-                        color: "white",
-                        backgroundColor: "black",
-                        fontWeight: "bold"
-                    } : {
-                        color: "black",
-                        backgroundColor: "#F5F5F5",
-                    }}> 소식
+                    style={(
+                        isClick === "news") ? select : notSelect
+                    }
+                > 소식
                 </OptionButton>
             </section>
             {(isClick === "friends") && <Friends/>}

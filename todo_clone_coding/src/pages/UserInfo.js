@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import styled from 'styled-components';
 import { RiSettings3Line } from 'react-icons/ri';
@@ -29,11 +30,17 @@ const Setting = styled(RiSettings3Line)`
 
 const UserInfo = () => {
     const [nickname, setNickname] = useState("이름없음");
+    const movePage = useNavigate();
+
+    const goSetting = () => movePage('./Setting');
+
     return (
         <Wrapper>
             <SubWrapper>
                 <Title> {nickname} </Title>
-                <Setting size="24"/>
+                <Setting 
+                    size="24"
+                    onClick={goSetting}/>
             </SubWrapper>
             <Footer/>
         </Wrapper>
