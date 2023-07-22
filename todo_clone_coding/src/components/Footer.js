@@ -44,8 +44,6 @@ const UserInfo = styled(FaUser)`
 
 const Footer = () => {
     const [clicked, setClicked] = useState("Main");
-    const [color, setColor] = useState("#929292");
-    const selected = useRef();
     const movePage = useNavigate();
 
     const checkIcons = (props) => {
@@ -60,27 +58,39 @@ const Footer = () => {
                 onClick={() => checkIcons("Main")}>
                 <Main
                     size="30"
-                    color={color}
+                    color={(clicked === "Main") ? 
+                        "black" : "#929292"}
                 /> 
-                <IconsTitle color={color}> 홈 </IconsTitle>
+                <IconsTitle 
+                    color={(clicked === "Main") ? 
+                        "black" : "#929292"}
+                > 홈 
+                </IconsTitle>
             </SubWrapper>
 
             <SubWrapper onClick={() => checkIcons("Notification")}>
                 <Notification 
                     size="28" 
-                    color={color}
+                    color={(clicked === "Notification") ? 
+                        "black" : "#929292"}
                 />
-                <IconsTitle color={color}> 알림 </IconsTitle>
+                <IconsTitle 
+                    color={(clicked === "Notification") ? 
+                        "black" : "#929292"}
+                > 알림 
+                </IconsTitle>
             </SubWrapper>
 
             <SubWrapper onClick={() => checkIcons("UserInfo")}>
                 <UserInfo 
                     size="25" 
-                    color={color}
+                    color={(clicked === "UserInfo") ? 
+                        "black" : "#929292"}
                 />
                 <IconsTitle 
                     style={{marginTop: '1px'}}
-                    color={color}
+                    color={(clicked === "UserInfo") ? 
+                        "black" : "#929292"}
                 > 
                     MY 
                 </IconsTitle>
