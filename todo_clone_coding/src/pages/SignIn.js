@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import axios from 'axios';
 import PrimaryButton from '../components/PrimaryButton';
 import styled from 'styled-components';
 import back from '../images/back.png';
@@ -43,17 +44,29 @@ const SignIn = () => {
 
     const movePage = useNavigate();
 
+    const toastMsg = {
+        position: 'bottom-center',
+        closeButton: false,
+        autoClose: "1000",
+        hideProgressBar: "true"
+    }
+
     const Back = () => movePage('/');
     const goMain = () => movePage('/Main');
 
-    function Login() {
-        goMain();
-        toast('로그인에 성공하였습니다', {
-            position: 'bottom-center',
-            closeButton: false,
-            autoClose: 1000,
-            hideProgressBar: true
-        });
+    const Login = () => {
+        if (email == "") {
+            toast('이메일을 입력해주세요.', toastMsg);
+        }
+
+        else if (password == "") {
+            toast('비밀번호를 입력해주세요.', toastMsg);
+        }
+
+        else {
+            goMain();
+            toast('로그인에 성공하였습니다', toastMsg);
+        }
     }
 
     return (

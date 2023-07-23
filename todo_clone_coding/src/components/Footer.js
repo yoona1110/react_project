@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { RiHome6Fill, RiNotification4Fill } from 'react-icons/ri';
@@ -24,22 +24,9 @@ const SubWrapper = styled.section`
     cursor: pointer;
 `;
 
-const IconsTitle = styled.section`
+const IconsTitle = styled.p`
     font-size: 12px;
     margin-top: -1px;
-`;
-
-const Main = styled(RiHome6Fill)`
-    margin-top: 11px;
-    /* background: linear-gradient(to right, #4880EC, #019CAD); */
-`;
-
-const Notification = styled(RiNotification4Fill)`
-    margin-top: 12px;
-`;
-
-const UserInfo = styled(FaUser)`
-    margin-top: 14px;
 `;
 
 const Footer = () => {
@@ -54,43 +41,49 @@ const Footer = () => {
     return (
         <Wrapper>
             <SubWrapper 
-                style={{marginLeft: '0rem'}}
-                onClick={() => checkIcons("Main")}>
-                <Main
+                style={{
+                    marginLeft: '0rem', 
+                    marginTop: "11px",
+                    color: `${(clicked === "Main") ? "black" : "#929292"}`
+                }}
+                onClick={() => checkIcons("Main")}
+            >
+                <RiHome6Fill
                     size="30"
                     color={(clicked === "Main") ? 
                         "black" : "#929292"}
                 /> 
-                <IconsTitle 
-                    color={(clicked === "Main") ? 
-                        "black" : "#929292"}
-                > 홈 
-                </IconsTitle>
+                <IconsTitle> 홈 </IconsTitle>
             </SubWrapper>
 
-            <SubWrapper onClick={() => checkIcons("Notification")}>
-                <Notification 
+            <SubWrapper 
+                style={{ 
+                    marginTop: "12px",
+                    color: `${(clicked === "Notification") ? "black" : "#929292"}` 
+                }}
+                onClick={() => checkIcons("Notification")}
+            >
+                <RiNotification4Fill 
                     size="28" 
                     color={(clicked === "Notification") ? 
                         "black" : "#929292"}
                 />
-                <IconsTitle 
-                    color={(clicked === "Notification") ? 
-                        "black" : "#929292"}
-                > 알림 
-                </IconsTitle>
+                <IconsTitle> 알림 </IconsTitle>
             </SubWrapper>
 
-            <SubWrapper onClick={() => checkIcons("UserInfo")}>
-                <UserInfo 
+            <SubWrapper 
+                style={{ 
+                    marginTop: "14px",
+                    color: `${(clicked === "UserInfo") ? "black" : "#929292"}` 
+                }}
+                onClick={() => checkIcons("UserInfo")}>
+                <FaUser 
                     size="25" 
                     color={(clicked === "UserInfo") ? 
                         "black" : "#929292"}
                 />
                 <IconsTitle 
-                    style={{marginTop: '1px'}}
-                    color={(clicked === "UserInfo") ? 
-                        "black" : "#929292"}
+                    style={{ marginTop: '1px' }}
                 > 
                     MY 
                 </IconsTitle>
