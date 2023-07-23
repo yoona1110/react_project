@@ -126,7 +126,10 @@ const SignUp = () => {
 
     return (
         <Wrapper>
-            <BackImg src={back} onClick={Back}/>
+            <BackImg 
+                src={back} 
+                onClick={Back}
+            />
             <Title> 회원가입 </Title>
             <Input 
                 type='email' 

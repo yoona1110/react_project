@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import axios from 'axios';
 import PrimaryButton from '../components/PrimaryButton';
 import styled from 'styled-components';
 import back from '../images/back.png';
@@ -9,10 +8,6 @@ import back from '../images/back.png';
 const Wrapper = styled.section`
     text-align: center;
     margin-top: 2rem;
-`;
-
-const SubWrapper = styled.section`
-    text-align: center;
 `;
 
 const Title = styled.h2`
@@ -41,6 +36,8 @@ const Input = styled.input`
 const SignIn = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [cuEmail, setCuEmail] = useState(false);
+    const [cuPassword, setCuPassword] = useState(false);
 
     const movePage = useNavigate();
 
@@ -71,25 +68,24 @@ const SignIn = () => {
 
     return (
         <Wrapper>
-            <BackImg src={back} onClick={Back} />
+            <BackImg 
+                src={back} 
+                onClick={Back} 
+            />
             <Title> 로그인 </Title>
-            <SubWrapper>
-                <Input 
-                    type='email' 
-                    placeholder='이메일' 
-                />
-            </SubWrapper>
+            <Input 
+                type='email' 
+                placeholder='이메일' 
+            />
             <Input 
                 type='password' 
                 placeholder='비밀번호' 
             />
-            <SubWrapper>
-                <PrimaryButton 
-                    btnName={"로그인"}
-                    onClick={Login}
-                    style={{ marginTop: '10px' }}>
-                </PrimaryButton>
-            </SubWrapper>
+            <PrimaryButton 
+                btnName={"로그인"}
+                onClick={Login}
+                style={{ marginTop: '10px' }}>
+            </PrimaryButton>
         </Wrapper>    
     )
 }
