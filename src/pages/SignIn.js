@@ -46,8 +46,8 @@ const SignIn = () => {
     const toastMsg = {
         position: 'bottom-center',
         closeButton: false,
-        autoClose: "1000",
-        hideProgressBar: "true"
+        autoClose: 1000,
+        hideProgressBar: true
     }
 
     const Back = () => movePage('/');
@@ -60,7 +60,7 @@ const SignIn = () => {
             toast('비밀번호를 입력해주세요.', toastMsg);
         } else {
             goMain();
-            toast('로그인에 성공하였습니다', toastMsg);
+            toast('로그인에 성공하였습니다.', toastMsg);
         }
     }
 
