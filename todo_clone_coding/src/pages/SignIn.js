@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import PrimaryButton from '../components/PrimaryButton';
@@ -64,6 +64,18 @@ const SignIn = () => {
         }
     }
 
+    const onChangeEmail = useCallback((e) => {
+        const emailCurrent = e.target.value;
+        setEmail(emailCurrent);
+        setCuEmail(true);
+    }, []);
+
+    const onChangePassword = useCallback((e) => {
+        const passwardCurrent = e.target.value;
+        setPassword(passwardCurrent);
+        setCuPassword(true);
+    }, []);
+
     return (
         <Wrapper>
             <BackImg 
@@ -74,10 +86,12 @@ const SignIn = () => {
             <Input 
                 type='email' 
                 placeholder='이메일' 
+                onChange={onChangeEmail}
             />
             <Input 
                 type='password' 
                 placeholder='비밀번호' 
+                onChange={onChangePassword}
             />
             <PrimaryButton 
                 btnName={"로그인"}

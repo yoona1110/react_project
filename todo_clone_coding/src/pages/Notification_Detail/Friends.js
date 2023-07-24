@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.section`
@@ -11,9 +11,21 @@ const Wrapper = styled.section`
 `;
 
 const Friends = () => {
-    const [list, setList] = useState("목록없음");
+    const [boardList, setBoardList] = useState([]);
+
+    const getBoardList = () => {
+
+
+    }
+
+    useEffect(() => {
+        getBoardList();
+    }, []);
+
     return (
-        <Wrapper> {list} </Wrapper>
+        <Wrapper>
+
+        </Wrapper>
     )
 }
 
