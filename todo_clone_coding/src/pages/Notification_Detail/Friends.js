@@ -13,10 +13,10 @@ const Wrapper = styled.section`
 const Friends = () => {
     const [boardList, setBoardList] = useState([]);
 
-    const getBoardList = () => {
+    // const getBoardList = () => {
 
 
-    }
+    // }
 
     useEffect(() => {
         getBoardList();
