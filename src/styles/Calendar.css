@@ -1,0 +1,68 @@
+.react-calendar {
+    border: none;
+}
+
+/* 년/월 design */
+.react-calendar__navigation__label > span {
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: -250px;
+}
+
+/* 요일 section design */
+.react-calendar__month-view__weekdays {
+    color: black;
+    font-size: 11px;
+    font-weight: normal;
+    margin-top: 7px;
+}
+
+/* day 한가지 design */
+.react-calendar__tile {
+    font-size: 11px;
+    color: black;
+    background-color: none;
+    text-align: center;
+    border-radius: 100%;
+    line-height: 16px;
+}
+.react-calendar__tile:enabled:hover {
+    color: black;
+    background-color: white;
+}
+.react-calendar__tile:enabled:focus,
+.react-calendar__tile--active {
+    font-weight: bold;
+    color: white;
+    background-color: #3251F3;
+    border-radius: 100%;
+    padding: 0.3rem;
+}
+
+/* 현재 선택한 일자 design */
+.react-calendar__tile--now {
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    border-radius: 100%;
+    padding: 0.3rem;
+}
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+    color: white;
+    background-color: #3251F3;
+}
+
+/* 월 변경 btn design */
+.react-calendar__navigation {
+    display: inline;
+    height: 44px;
+}
+.react-calendar__navigation button {
+  width: 20px;
+  background: none;
+} 
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background: white;
+}

@@ -4,6 +4,7 @@ import menu from '../images/menubar.png';
 import { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';      // css import
+import CalendarCSS from '../styles/Calendar.css';
 
 const Wrapper = styled.section`
     text-align: center;
@@ -52,12 +53,7 @@ const Menu = styled.img`
 `;
 
 const Main = () => {
-    const [isClick, setIsClick] = useState(false);
-    const [date, setDate] = useState(new Date());
 
-    const onSelect = () => {
-        setIsClick(!isClick);
-    }
 
     return (
         <Wrapper>
@@ -65,7 +61,6 @@ const Main = () => {
                 <Title> todomate </Title>
                 <Menu 
                     src={menu} 
-                    onClick={() => onSelect()}
                 />
             </SubWrapper>
             <ProfileImg/>
@@ -74,8 +69,14 @@ const Main = () => {
                     닉네임
                     자기소개
                     <Calendar 
-                        onChange={setDate} 
-                        value={date}
+                        style={CalendarCSS}
+                        formatDay={(locale, date) =>
+                            date.toLocaleDateString('en', {day : 'numeric'})
+                        }
+                        prev2Label={null}
+                        next2Label={null}
+                        showNeighboringMonth={false}
+                        calendarType='US'
                     />
                 </Left>
                 <Right>
