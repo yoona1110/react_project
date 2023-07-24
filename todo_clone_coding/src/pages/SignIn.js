@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import PrimaryButton from '../components/PrimaryButton';
@@ -12,7 +12,8 @@ const Wrapper = styled.section`
 
 const Title = styled.h2`
     font-size: 1.2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.6rem;
+    margin-right: 1rem;
 `;
 
 const BackImg = styled.img`
@@ -29,8 +30,8 @@ const Input = styled.input`
     font-size: 1rem;
     border: none;
     border-bottom: 1px solid #E7E7E7;
-    outline: none;
     padding-left: 1rem;
+    outline: none;
 `;
 
 const SignIn = () => {
@@ -54,13 +55,9 @@ const SignIn = () => {
     const Login = () => {
         if (email == "") {
             toast('이메일을 입력해주세요.', toastMsg);
-        }
-
-        else if (password == "") {
+        } else if (password == "") {
             toast('비밀번호를 입력해주세요.', toastMsg);
-        }
-
-        else {
+        } else {
             goMain();
             toast('로그인에 성공하였습니다', toastMsg);
         }
