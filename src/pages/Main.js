@@ -1,10 +1,11 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import Footer from '../components/Footer';
 import menu from '../images/menubar.png';
-import { useState } from 'react';
+import Dots from '../components/Schedule';
 import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';      // css import
 import CalendarCSS from '../styles/Calendar.css';
+import 'react-calendar/dist/Calendar.css';      // css import
 
 const Wrapper = styled.section`
     text-align: center;
@@ -53,8 +54,6 @@ const Menu = styled.img`
 `;
 
 const Main = () => {
-
-
     return (
         <Wrapper>
             <SubWrapper>
@@ -69,7 +68,6 @@ const Main = () => {
                     닉네임
                     자기소개
                     <Calendar 
-                        style={CalendarCSS}
                         formatDay={(locale, date) =>
                             date.toLocaleDateString('en', {day : 'numeric'})
                         }
@@ -78,6 +76,13 @@ const Main = () => {
                         showNeighboringMonth={false}
                         calendarType='US'
                     />
+                    <Dots 
+                        color1={'red'}
+                        color2={'orange'}
+                        color3={'yellow'}
+                        color4={'green'}
+                    >
+                    </Dots>
                 </Left>
                 <Right>
                     <div>오른쪽</div>
