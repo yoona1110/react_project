@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import menu from '../images/menubar.png';
 import Dots from '../components/Schedule';
 import Calendar from 'react-calendar';
-import CalendarCSS from '../styles/Calendar.css';
+import CalenderCSS from '../styles/Calendar.css';
 import 'react-calendar/dist/Calendar.css';      // css import
 
 const Wrapper = styled.section`
@@ -54,6 +54,8 @@ const Menu = styled.img`
 `;
 
 const Main = () => {
+    const [day, setDay] = useState(new Date());
+
     return (
         <Wrapper>
             <SubWrapper>
@@ -68,6 +70,7 @@ const Main = () => {
                     닉네임
                     자기소개
                     <Calendar 
+                        value={day}
                         formatDay={(locale, date) =>
                             date.toLocaleDateString('en', {day : 'numeric'})
                         }
