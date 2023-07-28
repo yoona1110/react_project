@@ -71,6 +71,7 @@ const Main = () => {
                     자기소개
                     <Calendar 
                         value={day}
+                        style={CalenderCSS}
                         formatDay={(locale, date) =>
                             date.toLocaleDateString('en', {day : 'numeric'})
                         }
