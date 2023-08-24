@@ -32,7 +32,7 @@ const Friends = () => {
     return (
         <Wrapper>
             <List> 
-                { boardList.map((item) => {
+                {boardList.map((item) => {
                     return (
                         <div>{`${item.name}님이 "${item.plan}" 할 일을 완수했습니다.`}</div>
                     )
