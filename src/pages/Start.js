@@ -43,7 +43,9 @@ const Home = () => {
                 <PrimaryButton 
                     btnName={"로그인"}
                     onClick={goSignIn}
-                    style={{ marginBottom: '-8px' }}>
+                    style={{ 
+                        marginBottom: '-8px' 
+                    }}>
                 </PrimaryButton>
             </BtnWrapper>
             <PrimaryButton 
