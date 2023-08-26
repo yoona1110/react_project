@@ -1,6 +1,4 @@
-import { useState } from 'react';
 import styled from 'styled-components';
-import Footer from '../components/Footer';
 import menu from '../images/menubar.png';
 import Dots from '../components/Schedule';
 import Calendar from 'react-calendar';
@@ -54,7 +52,7 @@ const Menu = styled.img`
 `;
 
 const Main = () => {
-    const [day, setDay] = useState(new Date());
+    const day = new Date();
 
     return (
         <Wrapper>
@@ -92,7 +90,6 @@ const Main = () => {
                     <div>오른쪽</div>
                 </Right>
             </SubWrapper>
-            <Footer/>
         </Wrapper>        
     )
 }

@@ -1,4 +1,3 @@
-import Footer from "../components/Footer";
 import styled from 'styled-components';
 import { useState } from 'react';
 
@@ -75,7 +74,6 @@ const UserInfo = () => {
             {(isClick === "friends") && <Friends/>}
             {(isClick === "like") && <Like/>}
             {(isClick === "news") && <News/>}
-            <Footer/>
         </Wrapper>
     )
 }

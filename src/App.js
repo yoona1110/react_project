@@ -10,6 +10,7 @@ import Main from './pages/Main';
 import Notification from './pages/Notification';
 import UserInfo from './pages/UserInfo';
 import Setting from './pages/Setting';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
@@ -29,9 +30,11 @@ const App = () => {
           <Route path='/' element={<Start/>}></Route>
           <Route path='/SignIn' element={<SignIn/>}></Route>
           <Route path='/SignUp' element={<SignUp/>}></Route>
-          <Route path='/Main' element={<Main/>}></Route>
-          <Route path='/Notification' element={<Notification/>}></Route>
-          <Route path='/UserInfo' element={<UserInfo/>}></Route>
+          <Route element={<Footer/>}>
+            <Route path='/Main' element={<Main/>}></Route>
+            <Route path='/Notification' element={<Notification/>}></Route>
+            <Route path='/UserInfo' element={<UserInfo/>}></Route>
+          </Route>
           <Route path='/UserInfo/Setting' element={<Setting/>}></Route>
         </Routes>
       </BrowserRouter>
